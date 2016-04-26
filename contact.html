@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.proposal.dev.catchx.cz/contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Apr 2016 11:06:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+<meta name="description" content="Gradually typed programming languages">
+<meta name="keywords" content="programming, language, project, science">
+<title>Gradually typed programming languages</title>
+<link  rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/animate.css" />
+<link  rel="stylesheet" href="css/custom.css" />
+<link href="http://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
+
+<link rel="icon" size="96x96" href="images/favicon-16x16.png" />
+<link rel="icon" size="32x32" href="images/favicon-32x32.png" />
+<link rel="icon" size="16x16" href="images/favicon-96x96.png" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/stellar.js"></script>
+
+</head>
+<body id="myPage">
+<div class="body" data-stellar-background-ratio="1.5"></div>
+<!-- Header -->
+
+<div class="main-header-container">
+    <div class="shadow-back">
+        <div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/prl.png"></div>
+        <div class="main-header"><h1> Gradually typed programming languages</h1></div>
+    </div>
+</div><!--Menu-->
+
+<div id="menu" class="menu-fixed">
+    <span id="menu-icon"><span class="glyphicon glyphicon-menu-hamburger"></span></span>
+    <ul>
+        <li  data-src="./images/menu/item_1.png"><a href="index-2.html">Home</a></li>
+        <li  data-src="./images/menu/item_2.png"><a href="about.html">About</a></li>
+        <li  data-src="./images/menu/item_3.png"><a href="research.html">Research</a></li>
+        <li  data-src="./images/menu/item_4.png"><a href="people.html">People</a></li>
+        <li  data-src="./images/menu/item_1.png"><a href="students.html">Students</a></li>
+        <li class="active" data-src="./images/menu/item_5.png"><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+<!-- Body -->
+<div class="body-content">
+    <div id="content" class="contact">
+        <h2 class="red-back-big">Who's in charge?</h2>
+        <center>
+            <h4>Webmaster</h4>
+            <a href="mailto:">Name Holder</a>
+            <h4>PL Seminar</h4>
+            <a href="mailto:">Name Holder</a>
+            <h4>PL Seminar, Junior</h4>
+            <a href="mailto:">Name Holder</a>
+            <h4>Happy Hour</h4>
+            <a href="mailto:">Name Holder</a>
+            <h4>Social Hour</h4>
+            <a href="mailto:">Name Holder</a>
+            <h4>Student Rep on Hiring</h4>
+            <a href="mailto:">Name Holder</a>
+            <h4>Applications for internship, PhD, Postdoc</h4>
+            <a href="mailto:">Name HSolder</a>
+        </center>
+        <br />
+    </div>
+    <!-- Sponsors -->
+    <div id="sponsors" class="col-md-12">
+    <center>
+    <div class="col-md-2">Sponsor</div>
+    <div class="col-md-2">Sponsor</div>
+    <div class="col-md-2">Sponsor</div>
+    <div class="col-md-2">Sponsor</div>
+    <div class="col-md-2">Sponsor</div>
+    <div class="col-md-2">Sponsor</div>
+    </center>
+</div>    <!-- Footer -->
+    <footer id="footer" class="col-md-12">
+    <div class="container text-center">
+        <hr>
+        <div class="copyright">
+            <p class="text-center">© Copyright Programming Research Laboratory 2016-2017 | made by  <a href="http://www.catchexception.cz/" target="_blank">Catchexception s.r.o.</a></p>
+        </div>
+        <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    </div>
+</footer>
+    <script type="text/javascript">
+    $(document).on('click', '.list', function (e) {
+        var ul = $(this).parent('li').find('ul');
+        ul.toggleClass('active');
+        var i = 1;
+        ul.children('li').each(function(){
+            $(this).delay(200*i).toggle('slow');
+            i++;
+        });
+
+    });
+
+</script>
+<script type="text/javascript">
+    function stopTopParallax()
+    {
+        var mainBanner = $('#main-banner');
+        if($('.shadow-back').offset().top >150)
+        {
+            mainBanner.css('position','fixed');
+            mainBanner.css('height','75px');
+            mainBanner.css('z-index','2');
+            $('#content').css('margin-top','260px');
+        } else {
+            mainBanner.css('position','relative');
+            mainBanner.css('height','260px');
+            mainBanner.css('z-index','0');
+            $('#content').css('margin-top','0px');
+        }
+    }
+    function checkOffset___() {
+        if($('#menu').offset().top + $('#menu').height()
+                >= $('#sponsors').offset().top -150)
+        {
+            var height = $('#content').height()-470;
+            $('#menu').removeClass('fixed-menu');
+            $('#menu').addClass('absolute-menu');
+            console.log();
+            $('#menu').css('bottom','-'+height+'px');
+        }
+
+        if($(document).scrollTop() + window.innerHeight < $('#sponsors').offset().top+150)
+        {
+            $('#menu').removeClass('absolute-menu');
+            $('#menu').addClass('fixed-menu');
+            $('#menu').css('bottom','');
+        }
+
+    }
+    function checkOffset() {
+        if ($('#menu').offset().top + $('#menu').height() > $('#sponsors').offset().top && $('#menu').hasClass('menu-fixed'))
+        {
+            $('#menu').removeClass('menu-fixed');
+            $('#menu').addClass('menu-absolute');
+            $('#menu').css('top',$('#sponsors').offset().top-$('#menu').height());
+        }
+        if ($(document).scrollTop() + window.innerHeight-100 < $('#sponsors').offset().top  && $('#menu').hasClass('menu-absolute'))
+        {
+            $('#menu').removeClass('menu-absolute');
+            $('#menu').addClass('menu-fixed');
+            $('#menu').removeAttr('style');
+        }
+
+    }
+    $(document).scroll(function() {
+        checkOffset();
+        //stopTopParallax();
+    });
+
+</script>
+
+<script>
+    $(document).on('click', '#menu-icon', function (e) {
+        $(this).parent('div').find('ul').toggleClass('active');
+    });
+    $(document).on('mouseover', '#menu li', function (e) {
+        $('#menu li').each(function(){
+            if (!$(this).hasClass('active'))
+                $(this).css('background-image','');
+        });
+        if (typeof $(this).data('src') !== 'undefined')
+            $(this).css('background-image','url("'+$(this).data('src')+'")')
+    });
+    $(document).on('mouseout', '#menu li', function (e) {
+        $('#menu li').each(function(){
+            if (!$(this).hasClass('active'))
+                $(this).css('background-image','');
+        });
+    });
+    $(document).ready(function () {
+        $('#menu li').each(function(){
+            if (!$(this).hasClass('active'))
+                $(this).css('background-image','');
+            else if (typeof $(this).data('src') !== 'undefined')
+                $(this).css('background-image','url("'+$(this).data('src')+'")')
+        });
+
+    });
+</script>
+<script>
+    $(function(){
+        $.stellar({
+            horizontalScrolling: false,
+            verticalOffset: 40
+        });
+    });
+</script>
+<script>
+    new WOW().init();
+</script>
+</div>
+</body>
+
+<!-- Mirrored from www.proposal.dev.catchx.cz/contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Apr 2016 11:06:16 GMT -->
+</html>
