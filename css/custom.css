@@ -218,13 +218,17 @@ h3
     //text-align: justify;
 }
 .main-h2 {
-     font-size: 20px;
+    font-size: 20px;
     margin-right: 10px;
     text-align: justify;
     font-family: 'Ubuntu', sans-serif;
     font-style: italic;
-    font-weight: bold;
+    line-height: 26px;
     color: black;
+}
+.main-h2 b {
+    font-size: 24px;
+    font-weight: bold;
 }
 .main-header>h1 {
  color: white;
@@ -295,6 +299,15 @@ h3
 }
 .research-ul {
     list-style-position: inside;
+}
+.research-ul li {
+    margin-bottom: 10px;
+}
+.student-bio {
+  font-weight: bold;
+}
+.student-icon {
+    width: 100px;
 }
 /* Responsive menu */
 /* Small Devices, Tablets */
