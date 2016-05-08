@@ -1,6 +1,7 @@
 #lang scribble/text
 @require["templates.rkt" racket/string]
 
+
 @(define (phddefense p)
    (string-append (person->short-name p) " successfully defended " (person->adjective p) " dissertation."))
 
@@ -46,7 +47,7 @@
 <html lang="en">
   @header[]
   <body id="@|body-id|">
-    @nav[]
+    @nav["Home"]
     <div class="body-content">
       <div id="content">
         <div class="row">

@@ -18,6 +18,7 @@
 
 (require
   web-server/templates
+  racket/string
   "templates/datatypes.rkt"
 )
 
@@ -25,6 +26,8 @@
 
 (define PROJECT-NAME "Gradual Typing Across the Spectrum")
 (define body-id "MyPage")
+
+(define PAGES '("Home" "About" "Research" "People" "Team"))
 
 ;; -----------------------------------------------------------------------------
 ;; --- Header/Footer
@@ -38,6 +41,17 @@
 (define (footer)
   (include-template "templates/footer.html"))
 
-(define (nav)
-  (include-template "templates/nav.html"))
-
+(define (nav current-page)
+  (string-append
+    "<div id=\"menu\" class=\"menu-fixed\">\n"
+    "  <span id=\"menu-icon\"><span class=\"glyphicon glyphicon-menu-hamburger\"></span></span>\n"
+    "  <ul>\n"
+    (string-join (for/list ([p (in-list PAGES)] [i (in-naturals 1)])
+      (string-append
+        "<li " (if (string=? p current-page) "class=\"active\"" "")
+          (format " data-src=\"./images/menu/item_~a.png\"" i)
+        ">"
+        (make-href (string-append (string-downcase p) ".html") p)
+        "</li>")))
+    "  </ul>\n"
+    "</div>\n"))

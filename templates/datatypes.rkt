@@ -57,6 +57,7 @@
   author*->string
 
   ->href
+  make-href
 
 )
 
@@ -278,11 +279,6 @@
            (string->email mailto)
            (string->url href)
            degree*))
-
-(: make-href (-> URL String String))
-(define (make-href href text)
-  (string-append
-    "<a href=\"" (url->string href) "\">" text "</a>"))
 
 (: person->short-name (-> Person String))
 (define (person->short-name p)
@@ -542,6 +538,12 @@
     (university->name val)]
    [else
     (raise-argument-error '->href "Cannot convert value to href" val)]))
+
+(: make-href (-> (U URL String) String String))
+(define (make-href href text)
+  (define str (if (url? href) (url->string href) href))
+  (string-append
+    "<a href=\"" str "\">" text "</a>"))
 
 ;; =============================================================================
 
