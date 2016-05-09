@@ -6,22 +6,28 @@
   PROJECT-NAME
   AWARD-HREF
   AWARD-NUMBER
-  ;; TODO
-
   body-id
-  ;; TODO
+  ;; constants
 
   header footer nav sponsors default-doctype
-  ;; TODO
+  ;; (-> Html)
+  ;; Common templates
 
   (all-from-out "templates/datatypes.rkt")
-  ;; Hyperlinked names
+  (all-from-out "templates/universities.rkt")
+  (all-from-out "templates/principal-investigators.rkt")
+  (all-from-out "templates/team-members.rkt")
+  (all-from-out "templates/venues.rkt")
 )
 
 (require
   web-server/templates
   racket/string
   "templates/datatypes.rkt"
+  "templates/principal-investigators.rkt"
+  "templates/team-members.rkt"
+  "templates/universities.rkt"
+  "templates/venues.rkt"
 )
 
 ;; =============================================================================

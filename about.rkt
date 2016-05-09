@@ -1,6 +1,7 @@
 #lang scribble/text
 @require["templates.rkt"]
 
+@; =============================================================================
 
 @default-doctype[]
 <html lang="en">
@@ -94,25 +95,25 @@
           <div class="col-md-12 card" >
             <p>
               <i>@|PROJECT-NAME|</i> is funded by the National Science Foundation
-              (@(make-href AWARD-HREF AWARD-NUMBER)).
+              (@make-href[AWARD-HREF AWARD-NUMBER]).
             </p>
             <p>
               <a href="people.html">Principal investigators</a> are
-              @(author*->string (list
+              @author*->string[(list
                  matthias
                  jan-vitek
                  sk
                  samth
                  siek
-                 jfoster)).
+                 jfoster)].
             </p>
             <p>
               Participating universities are
-              @(university*->string (list
+              @university*->string[(list
                 northeastern-university
                 brown-university
                 indiana-university
-                university-of-maryland)).
+                university-of-maryland)].
             </p>
           </div>
         </div>
@@ -120,5 +121,4 @@
       @sponsors[]
       @footer[]
   </body>
-  <!-- Mirrored from www.proposal.dev.catchx.cz/about.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Apr 2016 11:05:55 GMT -->
 </html>

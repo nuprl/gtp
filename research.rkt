@@ -1,6 +1,7 @@
 #lang scribble/text
 @require["templates.rkt" racket/string]
 
+
 @(define (research-projects . p*)
    (string-append
      "<div id=\"content\" class=\"research\">\n"
@@ -37,6 +38,7 @@
      "  </div>\n"
      "</div>\n"))
 
+@; =============================================================================
 
 @default-doctype[]
 <html lang="en">
@@ -199,6 +201,4 @@
       @footer[]
     </div>
   </body>
-  <!-- Mirrored from www.proposal.dev.catchx.cz/about.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Apr 2016 11:05:55 GMT -->
 </html>
-
