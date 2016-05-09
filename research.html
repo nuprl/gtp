@@ -1,351 +1,347 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml1-strict.dtd">
 <html lang="en">
+  <div class="body" data-stellar-background-ratio="1.5"></div>
+<!-- Mirrored from www.proposal.dev.catchx.cz/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Apr 2016 11:05:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Gradual Typing Across the Spectrum">
+  <meta name="keywords" content="programming, language, project, science">
+  <title>Gradual Typing Across the Spectrum</title>
+  <link  rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link  rel="stylesheet" href="css/custom.css" />
+  <link href="http://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
 
-  <!-- Mirrored from www.proposal.dev.catchx.cz/research.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Apr 2016 11:05:55 GMT -->
-  <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-  <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Gradually typed programming languages">
-    <meta name="keywords" content="programming, language, project, science">
-    <title>Gradually typed programming languages</title>
-    <link  rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link  rel="stylesheet" href="css/custom.css" />
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
+  <link rel="icon" size="96x96" href="images/favicon-16x16.png" />
+  <link rel="icon" size="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" size="16x16" href="images/favicon-96x96.png" />
 
-    <link rel="icon" size="96x96" href="images/favicon-16x16.png" />
-    <link rel="icon" size="32x32" href="images/favicon-32x32.png" />
-    <link rel="icon" size="16x16" href="images/favicon-96x96.png" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/stellar.js"></script>
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/stellar.js"></script>
-
-  </head>
-  <body id="myPage">
-    <div class="body" data-stellar-background-ratio="1.5"></div>
-    <!-- Header -->
-
-    <div class="main-header-container">
-      <div class="shadow-back">
-        <div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/prl.png"></div>
-        <div class="main-header"><h1> Gradually Typed Programming Languages</h1></div>
-      </div>
-    </div><!--Menu-->
-
+</head>
+<div class="main-header-container">
+  <div class="shadow-back">
+    <div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/prl.png"></div>
+    <div class="main-header"><h1>Gradual Typing Across the Spectrum</h1></div>
+  </div>
+</div>
+  <body id="MyPage">
     <div id="menu" class="menu-fixed">
-      <span id="menu-icon"><span class="glyphicon glyphicon-menu-hamburger"></span></span>
-      <ul>
-        <li  data-src="./images/menu/item_1.png"><a href="index.html">Home</a></li>
-        <li  data-src="./images/menu/item_2.png"><a href="about.html">About</a></li>
-        <li class="active" data-src="./images/menu/item_3.png"><a href="research.html">Research</a></li>
-        <li  data-src="./images/menu/item_4.png"><a href="people.html">People</a></li>
-        <li  data-src="./images/menu/item_1.png"><a href="team.html">Team</a></li>
-      </ul>
-    </div>
+  <span id="menu-icon"><span class="glyphicon glyphicon-menu-hamburger"></span></span>
+  <ul>
+<li  data-src="./images/menu/item_1.png"><a  href="index.html">Home</a></li> <li  data-src="./images/menu/item_2.png"><a  href="about.html">About</a></li> <li class="active" data-src="./images/menu/item_3.png"><a  href="research.html">Research</a></li> <li  data-src="./images/menu/item_4.png"><a  href="people.html">People</a></li> <li  data-src="./images/menu/item_5.png"><a  href="team.html">Team</a></li>  </ul>
+</div>
+
     <!-- Body -->
     <div class="body-content">
       <div id="content" class="research">
-        <h2 class="red-back-big">Projects</h2>
-        <div class="col-md-12">
-          <h3 id="reticulated" class="gray-back">Reticulated Python</h3>
-          <div class="col-md-12 card">
-            <img class="img-responsive project-logo" src="http://placehold.it/250x250">
-            <p>
-              Reticulated Python adds optional static and runtime typechecking
-              to Python.
-              It lets programmers annotate functions and classes with types,
-              and it enforces these types both before and during the execution
-              of the program, providing early detection of errors.
-              Crucially, Reticulated does not require that all parts of a
-              program be given static types, or even any of it.
-              In places where typed and untyped code interact &mdash;
-              for example, when an untyped variable is passed into a function
-              whose argument type is <tt>Int</tt> &mdash; Reticulated can
-              perform runtime checks ensure that the values in variables
-              always correspond to their expected types, even when this
-              cannot be guaranteed statically.
-            </p>
-            <p>
-              Reticulated Python runs on both Python 3 and Python 2.7,
-              although the type annotation syntax is different between the two versions.
-              Reticulated on Python 3 uses the syntactic annotations provided
-              by Python 3 as type annotations, while Reticulated on Python 2.7
-              uses decorators to specify types.
-              In both cases, the absence of an annotation implies that the
-              parameters or return values are dynamically typed, as in
-              standard Python.
-              We also provide "type functions" for creating types that
-              correspond to higher-order values in Python, like functions
-              and lists, and we provide the type <tt>Dyn</tt> (for dynamic) to
-              allow for, for example, heterogeneous lists, which have the
-              type <tt>List(Dyn)</tt>.</p>
-            <p>
-              Reticulated Python itself is written in Python
-              (specifically, the subset of Python that is syntactically
-              compatible with both Python 2.7 and 3).
-              Its static, compile-time component is both a "linter" or
-              static analyzer, and a source-to-source translator.
-              This component parses source files (using the Python
-              <a href="https://docs.python.org/3/library/ast.html">ast</a> package)
-              and searches for type errors, rejecting programs that have
-              statically detectable errors and syntactically inserting
-              runtime checks or casts at boundaries between typed and
-              untyped code, where type errors may occur.
-            </p>
-            <div class="row col-md-12">
-              <span class="pull-right">You can find more on this site: <a class="project-link" target="_blank" href="https://github.com/mvitousek/reticulated">https://github.com/mvitousek/reticulated</a></span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <h3 id="ruby" class="gray-back">DRuby</h3>
-          <div class="col-md-12 card">
-            <img class="img-responsive project-logo" src="images/projects/drup.png">
-            <p>
-              Diamondback Ruby (DRuby) is an extension to Ruby that aims to
-              bring the benefits of static typing to Ruby without
-              compromising the expressiveness of the language.
-              The main features of DRuby are:
-            </p>
-            <ul class="research-ul">
-              <li>
-                Type inference: DRuby uses inference to model most of Ruby’s
-                idioms as precisely as possible without any need for programmer
-                intervention.
-              </li>
-              <li>
-                Type annotations: Methods may be given explicit type
-                annotations with an RDoc-inspired syntax.
-              </li>
-              <li>
-                Dynamic checking: When necessary, methods can be type checked
-                at runtime, using contracts to isolate and properly blame any
-                errant code, similar to gradual typing.
-              </li>
-              <li>
-                Metaprogramming support: DRuby includes a combined static
-                and dynamic analysis to precisely model dynamic meta-programming
-                constructs, such as eval and method_missing.
-              </li>
-            </ul>
-            <div class="row col-md-12">
-              <span class="pull-right">You can find more on this site: <a class="project-link" target="_blank" href="http://www.cs.umd.edu/projects/PL/druby/">http://www.cs.umd.edu/projects/PL/druby/</a></span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <h3 id="racket" class="gray-back">Typed Racket</h3>
-          <div class="col-md-12 card">
-            <img class="img-responsive project-logo" src="images/projects/racket.png">
-            <p>
-              Typed Racket is a sister language of
-              <a href="http://racket-lang.org">Racket</a> with statically-checked
-              type annotations.
-              Racket and Typed Racket programs are fully interoperable:
-              any typed functions may be used freely in untyped code and
-              any untyped functions may be imported to typed code by supplying
-              a type annotation.
-              Type soundness is enforced despite these interactions by interpreting
-              types as <a href="https://www.eecs.northwestern.edu/~robby/pubs/papers/ho-contracts-icfp2002.pdf">higher-order contracts</a>
-              and dynamically enforcing type-correct use.
-            </p>
-            <p>
-              To accomodate the flow-sensitive reasoning commonly used in
-              untyped programs, Typed Racket employs
-              <a href="http://www.ccs.neu.edu/racket/pubs/icfp10-thf.pdf">occurrence typing</a>:
-              a technique for refining the type of variables based on predicates
-              prior to each occurrence of the variable in the control flow graph.
-              Typed Racket is also macro-extensible and includes types for
-              <a href="http://www.ccs.neu.edu/racket/pubs/esop09-sthf.pdf">variable-arity, polymorphic functions</a>; 
-              <a href="http://www.ccs.neu.edu/racket/pubs/esop13-tsth.pdf">continuations</a>; and
-              <a href="http://www.ccs.neu.edu/racket/pubs/ecoop2015-takikawa-et-al.pdf">first-class classes</a>.
-              <ul>
-              </ul>
-            </p>
-            <div class="row col-md-12">
-              <span class="pull-right">You can find more on this site: <a class="project-link" target="_blank" href="https://docs.racket-lang.org/ts-guide/">https://docs.racket-lang.org/ts-guide/</a></span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <h3 id="pyret" class="gray-back">Pyret</h3>
-          <div class="col-md-12 card">
-            <img class="img-responsive project-logo" src="images/projects/pyret.png">
-            <p>
-              Pyret is a programming language designed to serve as an
-              outstanding choice for programming education while exploring
-              the confluence of scripting and functional programming.
-              It's under active design and development, and free to use or modify.
-            </p>
-            <ul class="research-ul">
-              <li>
-                Pyret has Python-inspired syntax for functions, lists,
-                and operators.
-                Iteration constructs are designed to be evocative of
-                those in other languages.
-              </li>
-              <li>
-                Pyret makes testing a natural part of the programming
-                process.
-                Functions can end in a <tt>where:</tt> clause that
-                holds unit tests for the function.
-                These assertions are checked dynamically.
-              </li>
-              <li>
-                Pyret allows concise, expressive, recursive data declarations.
-                Type annotations are optional and can be added incrementally,
-                to serve a variety of pedagogic styles and curricular needs.
-              </li>
-            </ul>
-            <div class="row col-md-12">
-              <span class="pull-right">You can find more on this site: <a class="project-link" target="_blank" href="https://www.pyret.org/">https://www.pyret.org/</a></span>
-            </div>
-          </div>
+<h2 class="red-back-big">Projects</h2><div class="col-md-12">
+  <h3 id="reticulated-python" class="gray-back">Reticulated Python  </h3>
+  <div class="col-md-12 card">
+    <img class="img-responsive project-logo" src=images/projects/reticulated-python.png />
+<p> 
+    Reticulated Python adds optional static and runtime typechecking 
+    to  <a  href="https://www.python.org">Python</a> . 
+    It lets programmers annotate functions and classes with types, 
+    and it enforces these types both before and during the execution 
+    of the program, providing early detection of errors. 
+    Crucially, Reticulated does not require that all parts of a 
+    program be given static types, or even any of it. 
+    In places where typed and untyped code interact &mdash; 
+    for example, when an untyped variable is passed into a function 
+    whose argument type is <tt>Int</tt> &mdash; Reticulated can 
+    perform runtime checks ensure that the values in variables 
+    always correspond to their expected types, even when this 
+    cannot be guaranteed statically. 
+ </p> 
+ <p> 
+    Reticulated Python runs on both 
+    <a  href="https://docs.python.org/3">Python 3</a>  and 
+    <a  href="https://docs.python.org/3">Python 2.7</a> , 
+    although the type annotation syntax is different between the two versions. 
+    Reticulated on Python 3 uses the syntactic annotations provided 
+    by Python 3 as type annotations, while Reticulated on Python 2.7 
+    uses decorators to specify types. 
+    In both cases, the absence of an annotation implies that the 
+    parameters or return values are dynamically typed, as in 
+    standard Python. 
+    We also provide "type functions" for creating types that 
+    correspond to higher-order values in Python, like functions 
+    and lists, and we provide the type <tt>Dyn</tt> (for dynamic) to 
+    allow for, for example, heterogeneous lists, which have the 
+    type <tt>List(Dyn)</tt>. 
+ </p> 
+ <p> 
+    Reticulated Python itself is written in Python 
+    (specifically, the subset of Python that is syntactically 
+    compatible with both Python 2.7 and 3). 
+    Its static, compile-time component is both a "linter" or 
+    static analyzer, and a source-to-source translator. 
+    This component parses source files (using the Python 
+    <a  href="https://docs.python.org/3/library/ast.html">ast</a>  package) 
+    and searches for type errors, rejecting programs that have 
+    statically detectable errors and syntactically inserting 
+    runtime checks or casts at boundaries between typed and 
+    untyped code, where type errors may occur. 
+ </p>    <div class="row col-md-12">
+      <span class="pull-right">You can find more on this site: <a class="project-link" target="_blank" href="https://github.com/mvitousek/reticulated">https://github.com/mvitousek/reticulated</a>      </span>
+    </div>
+  </div>
+</div>
 
-        </div>
-        <div class="col-md-12">
-          <h3 id="R" class="gray-back">R</h3>
-          <div class="col-md-12 card">
-            <img class="img-responsive project-logo" src="http://placehold.it/250x250">
-            <p>Coming soon!</p>
-            <div class="row col-md-12">
-              <!--     <span class="pull-right">You can find more on this site: <a class="project-link" target="_blank" href="https://www.pyret.org/">https://www.pyret.org/</a></span> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Sponsors -->
+<div class="col-md-12">
+  <h3 id="diamondback-ruby" class="gray-back">Diamondback Ruby  </h3>
+  <div class="col-md-12 card">
+    <img class="img-responsive project-logo" src=images/projects/diamondback-ruby.png />
+<p> 
+    Diamondback Ruby (DRuby) is an extension to 
+    <a  href="https://www.ruby-lang.org">Ruby</a>  that aims to 
+    bring the benefits of static typing to Ruby without 
+    compromising the expressiveness of the language. 
+    The main features of DRuby are: 
+ </p> 
+ <ul class="research-ul"> 
+    <li> 
+      Type inference: DRuby uses inference to model most of Ruby’s 
+      idioms as precisely as possible without any need for programmer 
+      intervention. 
+    </li> 
+    <li> 
+      Type annotations: Methods may be given explicit type 
+      annotations with an  <a  href="http://docs.seattlerb.org/rdoc/">RDoc</a> -inspired syntax. 
+    </li> 
+    <li> 
+      Dynamic checking: When necessary, methods can be type checked 
+      at runtime, using contracts to isolate and properly blame any 
+      errant code, similar to gradual typing. 
+    </li> 
+    <li> 
+      Metaprogramming support: DRuby includes a combined static 
+      and dynamic analysis to precisely model dynamic meta-programming 
+      constructs, such as <tt>eval</tt> and <tt>method_missing</tt>. 
+    </li> 
+ </ul>    <div class="row col-md-12">
+      <span class="pull-right">You can find more on this site: <a class="project-link" target="_blank" href="http://www.cs.umd.edu/projects/PL/druby/">http://www.cs.umd.edu/projects/PL/druby/</a>      </span>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <h3 id="typed-racket" class="gray-back">Typed Racket  </h3>
+  <div class="col-md-12 card">
+    <img class="img-responsive project-logo" src=images/projects/typed-racket.png />
+<p> 
+    Typed Racket is a sister language of 
+    <a  href="http://racket-lang.org">Racket</a> 
+    with statically-checked type annotations. 
+    Racket and Typed Racket programs are fully interoperable: 
+    any typed functions may be used freely in untyped code and 
+    any untyped functions may be imported to typed code by supplying 
+    a type annotation. 
+    Type soundness is enforced despite these interactions by interpreting 
+    types as  <a  href="https://www.eecs.northwestern.edu/~robby/pubs/papers/ho-contracts-icfp2002.pdf">higher-order contracts</a> 
+    and dynamically enforcing type-correct use. 
+ </p> 
+ <p> 
+    To accomodate the flow-sensitive reasoning commonly used in 
+    untyped programs, Typed Racket employs 
+    <a  href="http://www.ccs.neu.edu/racket/pubs/icfp10-thf.pdf">occurrence-typing</a> : 
+    a technique for refining the type of variables based on predicates 
+    prior to each occurrence of the variable in the control flow graph. 
+    Typed Racket is also macro-extensible and includes types for 
+    <a  href="http://www.ccs.neu.edu/racket/pubs/esop09-sthf.pdf">variable-arity, polymorphic functions</a> ; 
+    <a  href="http://www.ccs.neu.edu/racket/pubs/esop13-tsth.pdf">continuations</a> ; and 
+    <a  href="http://www.ccs.neu.edu/racket/pubs/ecoop2015-takikawa-et-al.pdf">first-class classes</a> . 
+ </p>    <div class="row col-md-12">
+      <span class="pull-right">You can find more on this site: <a class="project-link" target="_blank" href="https://docs.racket-lang.org/ts-guide/">https://docs.racket-lang.org/ts-guide/</a>      </span>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <h3 id="pyret" class="gray-back">Pyret  </h3>
+  <div class="col-md-12 card">
+    <img class="img-responsive project-logo" src=images/projects/pyret.png />
+<p> 
+    Pyret is a programming language designed to serve as an 
+    outstanding choice for programming education while exploring 
+    the confluence of scripting and functional programming. 
+    It's under active design and development, and free to use or modify. 
+ </p> 
+ <ul class="research-ul"> 
+    <li> 
+      Pyret has Python-inspired syntax for functions, lists, 
+      and operators. 
+      Iteration constructs are designed to be evocative of 
+      those in other languages. 
+    </li> 
+    <li> 
+      Pyret makes testing a natural part of the programming 
+      process. 
+      Functions can end in a <tt>where:</tt> clause that 
+      holds unit tests for the function. 
+      These assertions are checked dynamically. 
+    </li> 
+    <li> 
+      Pyret allows concise, expressive, recursive data declarations. 
+      Type annotations are optional and can be added incrementally, 
+      to serve a variety of pedagogic styles and curricular needs. 
+    </li> 
+ </ul>    <div class="row col-md-12">
+      <span class="pull-right">You can find more on this site: <a class="project-link" target="_blank" href="https://www.pyret.org/">https://www.pyret.org/</a>      </span>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <h3 id="r" class="gray-back">R  </h3>
+  <div class="col-md-12 card">
+    <img class="img-responsive project-logo" src=images/projects/r.png />
+<p>Coming soon!</p>    <div class="row col-md-12">
+      <span class="pull-right">You can find more on this site: <a class="project-link" target="_blank" href="http://janvitek.org">http://janvitek.org</a>      </span>
+    </div>
+  </div>
+</div>
+</div>
+
       <div id="sponsors" class="col-md-12">
-        <center>
-          <h3></h3>
-        </center>
-      </div><!-- Footer -->
+  <center>
+    <h4 class="red back">
 
-      <footer id="footer" class="col-md-12">
-        <div class="container text-center">
-          <hr>
-          <div class="copyright">
-            <p class="text-center">© Copyright Programming Research Laboratory 2016-2017 | made by  <a href="http://www.catchexception.cz/" target="_blank">Catchexception s.r.o.</a></p>
-          </div>
-          <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-        </div>
-      </footer>
+    </h4>
+  </center>
+</div>
+      <!-- Footer -->
 
-      <script type="text/javascript">
-        $(document).on('click', '.list', function (e) {
-        var ul = $(this).parent('li').find('ul');
-        ul.toggleClass('active');
-        var i = 1;
-        ul.children('li').each(function(){
-        $(this).delay(200*i).toggle('slow');
-        i++;
-        });
+<footer id="footer" class="col-md-12">
+  <div class="container text-center">
+    <hr>
+    <div class="copyright">
+      <p class="text-center">© Copyright Programming Research Laboratory 2016-2017 | made by  <a href="http://www.catchexception.cz/" target="_blank">Catchexception s.r.o.</a></p>
+    </div>
+    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+  </div>
+</footer>
 
-        });
+<script type="text/javascript">
+  $(document).on('click', '.list', function (e) {
+  var ul = $(this).parent('li').find('ul');
+  ul.toggleClass('active');
+  var i = 1;
+  ul.children('li').each(function(){
+  $(this).delay(200*i).toggle('slow');
+  i++;
+  });
 
-      </script>
-      <script type="text/javascript">
-        function stopTopParallax()
-        {
-        var mainBanner = $('#main-banner');
-        if($('.shadow-back').offset().top >150)
-        {
-        mainBanner.css('position','fixed');
-        mainBanner.css('height','75px');
-        mainBanner.css('z-index','2');
-        $('#content').css('margin-top','260px');
-        } else {
-        mainBanner.css('position','relative');
-        mainBanner.css('height','260px');
-        mainBanner.css('z-index','0');
-        $('#content').css('margin-top','0px');
-        }
-        }
-        function checkOffset___() {
-        if($('#menu').offset().top + $('#menu').height()
-        >= $('#sponsors').offset().top -150)
-        {
-        var height = $('#content').height()-470;
-        $('#menu').removeClass('fixed-menu');
-        $('#menu').addClass('absolute-menu');
-        console.log();
-        $('#menu').css('bottom','-'+height+'px');
-        }
+  });
 
-        if($(document).scrollTop() + window.innerHeight < $('#sponsors').offset().top+150)
-                                                          {
-                                                          $('#menu').removeClass('absolute-menu');
-                                                          $('#menu').addClass('fixed-menu');
-                                                          $('#menu').css('bottom','');
-                                                          }
+</script>
+<script type="text/javascript">
+  function stopTopParallax()
+  {
+  var mainBanner = $('#main-banner');
+  if($('.shadow-back').offset().top >150)
+  {
+  mainBanner.css('position','fixed');
+  mainBanner.css('height','75px');
+  mainBanner.css('z-index','2');
+  $('#content').css('margin-top','260px');
+  } else {
+  mainBanner.css('position','relative');
+  mainBanner.css('height','260px');
+  mainBanner.css('z-index','0');
+  $('#content').css('margin-top','0px');
+  }
+  }
+  function checkOffset___() {
+  if($('#menu').offset().top + $('#menu').height()
+  >= $('#sponsors').offset().top -150)
+  {
+  var height = $('#content').height()-470;
+  $('#menu').removeClass('fixed-menu');
+  $('#menu').addClass('absolute-menu');
+  console.log();
+  $('#menu').css('bottom','-'+height+'px');
+  }
 
-                                                          }
-                                                          function checkOffset() {
-                                                          if ($('#menu').offset().top + $('#menu').height() > $('#sponsors').offset().top && $('#menu').hasClass('menu-fixed'))
-          {
-          $('#menu').removeClass('menu-fixed');
-          $('#menu').addClass('menu-absolute');
-          $('#menu').css('top',$('#sponsors').offset().top-$('#menu').height());
-          }
-          if ($(document).scrollTop() + window.innerHeight-100 < $('#sponsors').offset().top  && $('#menu').hasClass('menu-absolute'))
-                                                                 {
-                                                                 $('#menu').removeClass('menu-absolute');
-                                                                 $('#menu').addClass('menu-fixed');
-                                                                 $('#menu').removeAttr('style');
-                                                                 }
+  if($(document).scrollTop() + window.innerHeight < $('#sponsors').offset().top+150)
+                                                    {
+                                                    $('#menu').removeClass('absolute-menu');
+                                                    $('#menu').addClass('fixed-menu');
+                                                    $('#menu').css('bottom','');
+                                                    }
 
-                                                                 }
-                                                                 $(document).scroll(function() {
-                                                                 checkOffset();
-                                                                 //stopTopParallax();
-                                                                 });
+                                                    }
+                                                    function checkOffset() {
+                                                    if ($('#menu').offset().top + $('#menu').height() > $('#sponsors').offset().top && $('#menu').hasClass('menu-fixed'))
+    {
+    $('#menu').removeClass('menu-fixed');
+    $('#menu').addClass('menu-absolute');
+    $('#menu').css('top',$('#sponsors').offset().top-$('#menu').height());
+    }
+    if ($(document).scrollTop() + window.innerHeight-100 < $('#sponsors').offset().top  && $('#menu').hasClass('menu-absolute'))
+                                                           {
+                                                           $('#menu').removeClass('menu-absolute');
+                                                           $('#menu').addClass('menu-fixed');
+                                                           $('#menu').removeAttr('style');
+                                                           }
 
-                                                                 </script>
+                                                           }
+                                                           $(document).scroll(function() {
+                                                           checkOffset();
+                                                           //stopTopParallax();
+                                                           });
 
-      <script>
-        $(document).on('click', '#menu-icon', function (e) {
-        $(this).parent('div').find('ul').toggleClass('active');
-        });
-        $(document).on('mouseover', '#menu li', function (e) {
-        $('#menu li').each(function(){
-        if (!$(this).hasClass('active'))
-        $(this).css('background-image','');
-        });
-        if (typeof $(this).data('src') !== 'undefined')
-        $(this).css('background-image','url("'+$(this).data('src')+'")')
-        });
-        $(document).on('mouseout', '#menu li', function (e) {
-        $('#menu li').each(function(){
-        if (!$(this).hasClass('active'))
-        $(this).css('background-image','');
-        });
-        });
-        $(document).ready(function () {
-        $('#menu li').each(function(){
-        if (!$(this).hasClass('active'))
-        $(this).css('background-image','');
-        else if (typeof $(this).data('src') !== 'undefined')
-        $(this).css('background-image','url("'+$(this).data('src')+'")')
-        });
+                                                           </script>
 
-        });
-      </script>
-      <script>
-        $(function(){
-        $.stellar({
-        horizontalScrolling: false,
-        verticalOffset: 40
-        });
-        });
-      </script>
-      <script>
-        new WOW().init();
-      </script>
+<script>
+  $(document).on('click', '#menu-icon', function (e) {
+  $(this).parent('div').find('ul').toggleClass('active');
+  });
+  $(document).on('mouseover', '#menu li', function (e) {
+  $('#menu li').each(function(){
+  if (!$(this).hasClass('active'))
+  $(this).css('background-image','');
+  });
+  if (typeof $(this).data('src') !== 'undefined')
+  $(this).css('background-image','url("'+$(this).data('src')+'")')
+  });
+  $(document).on('mouseout', '#menu li', function (e) {
+  $('#menu li').each(function(){
+  if (!$(this).hasClass('active'))
+  $(this).css('background-image','');
+  });
+  });
+  $(document).ready(function () {
+  $('#menu li').each(function(){
+  if (!$(this).hasClass('active'))
+  $(this).css('background-image','');
+  else if (typeof $(this).data('src') !== 'undefined')
+  $(this).css('background-image','url("'+$(this).data('src')+'")')
+  });
+
+  });
+</script>
+<script>
+  $(function(){
+  $.stellar({
+  horizontalScrolling: false,
+  verticalOffset: 40
+  });
+  });
+</script>
+<script>
+  new WOW().init();
+</script>
+
+    </div>
   </body>
-
   <!-- Mirrored from www.proposal.dev.catchx.cz/about.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Apr 2016 11:05:55 GMT -->
 </html>
+

@@ -5,24 +5,25 @@
   northeastern-university
   indiana-university
   brown-university
-  purdue-university
   university-of-maryland
-  university-of-arizona
-  university-of-geneva
-  university-of-victoria
-  university-of-notre-dame
-  university-of-british-columbia
-  uc-berkeley
-  rice-university
-  th-karlsruhe
-  brigham-young-university
-  carnegie-mellon-university
 
-  university->name
+  email->string
+
+  university->string
+  university-name
 
   person->short-name
   person->full-name
   person->adjective
+
+  person-short-name
+  person-full-name
+  person-title
+  person->mailto
+  person->href
+  person->image
+  pi->history
+  student-university
 
   samth sam-tobin-hochstadt
   matthias matthias-felleisen
@@ -30,6 +31,8 @@
   jfoster jeff-foster
   siek jeremy-siek
   sk shriram-krishnamurthi
+
+  student->university-id
 
   brianna-ren
   asumu-takikawa
@@ -54,17 +57,22 @@
    [publication-author* publication->author*]
    [publication-venue publication->venue])
   publication->name
+
+  add-commas
+  word*->string
+  university*->string
   author*->string
 
   ->href
   make-href
-
+  string->id
 )
 
 (require
   (only-in racket/list add-between)
-  (only-in racket/string string-join)
+  racket/string
   typed/net/url
+  glob/typed
 )
 
 (module+ test
@@ -126,8 +134,8 @@
                          #:href href)
   (university name (string->url href)))
 
-(: university->name (-> University String))
-(define (university->name uni)
+(: university->string (-> University String))
+(define (university->string uni)
   (make-href (university-href uni) (university-name uni)))
 
 (define northeastern-university
@@ -198,6 +206,10 @@
   (make-university "University of Notre Dame"
                    #:href "http://www.nd.edu"))
 
+(define university-of-western-australia
+  (make-university "University of Western Australia"
+                   #:href "http://web.csse.uwa.edu.au/"))
+
 (define university-of-british-columbia
   (make-university "University of British Columbia"
                    #:href "https://www.cs.ubc.edu"))
@@ -233,13 +245,16 @@
   [short-name : String]
   [full-name  : String]
   [gender     : Symbol]
+  [title      : String]
   [mailto     : Email]
   [href       : URL]
   [degree*    : Degree*]
 ) #:transparent )
 (define-type Person person)
 
-(struct student person ())
+(struct student person (
+  [university : University]
+) #:transparent )
 (define-type Student student)
 
 (struct pi person (
@@ -250,24 +265,28 @@
 ;; -----------------------------------------------------------------------------
 ;; --- Functions for people
 
-(: make-pi (->* [String #:mailto String #:href String #:degree* Degree* #:position* Position*] [#:full-name (U #f String) #:gender Symbol] PI))
+(: make-pi (->* [String #:mailto String #:href String #:degree* Degree* #:position* Position* #:title String] [#:full-name (U #f String) #:gender Symbol] PI))
 (define (make-pi short-name
                  #:mailto    mailto
                  #:href      href
                  #:degree*   degree*
                  #:position* position*
+                 #:title title
                  #:gender    [gender 'M]
                  #:full-name [full-name #f])
   (pi short-name
       (or full-name short-name)
       gender
+      title
       (string->email mailto)
       (string->url href)
       ((inst sort D+ Year) degree* > #:key degree-year)
       ((inst sort P+ Year) position* > #:key position-year)))
 
-(: make-student (->* [String #:mailto String #:href String #:degree* Degree*] [#:full-name (U #f String) #:gender Symbol] Student))
+(: make-student (->* [String #:university University #:title (U Degree String) #:mailto String #:href String #:degree* Degree*] [#:full-name (U #f String) #:gender Symbol] Student))
 (define (make-student short-name
+                      #:university uni
+                      #:title     title
                       #:mailto    mailto
                       #:href      href
                       #:degree*   degree*
@@ -276,9 +295,14 @@
   (student short-name
            (or full-name short-name)
            gender
+           (cond
+            [(string? title) title]
+            [(eq? 'postdoc title) (degree->string title)]
+            [else (string-append (degree->string title) " Student")])
            (string->email mailto)
            (string->url href)
-           degree*))
+           degree*
+           uni))
 
 (: person->short-name (-> Person String))
 (define (person->short-name p)
@@ -296,6 +320,65 @@
     [(F) "her"]
     [else "their"]))
 
+(: pi->history (-> PI (Listof String)))
+(define (pi->history pi)
+  (append (for/list : (Listof String)
+                    ([p (in-list (pi-position* pi))])
+            (P+->string p))
+          (for/list : (Listof String)
+                    ([d (in-list (person-degree* pi))]
+                     #:when (phd? d))
+            (D+->string d))))
+
+(: phd? (-> D+ Boolean))
+(define (phd? d+)
+  (eq? 'phd (car d+)))
+
+(: P+->string (-> P+ String))
+(define (P+->string pos)
+  (format "Joined ~a, ~a" (university->string (car pos)) (cadr pos)))
+
+(: D+->string (-> D+ String))
+(define (D+->string d+)
+  (format "~a, ~a, ~a" (degree->string (car d+)) (university->string (cadr d+)) (caddr d+)))
+
+(: degree->string (-> Degree String))
+(define (degree->string d)
+  (case d
+   [(phd) "Ph.D"]
+   [(diplom) "Diplom"]
+   [(ms) "M.S."]
+   [(msc) "M.Sc."]
+   [(postdoc) "Post-doc"]
+   [(bs) "B.S."]
+   [(bsc) "B.Sc."]
+   [else (raise-argument-error 'degree->string "Unknown degree" d)]))
+
+(: person->image (-> Person String))
+(define (person->image p)
+  (define id (string->id (person-short-name p)))
+  (define pic* (glob (string-append "images/people/" id "*")))
+  (if (null? pic*)
+    "images/people/unknown.png"
+    (begin
+      (unless (null? (cdr pic*))
+        (printf "WARNING: found multiple images matching '~a': ~a\n" id pic*))
+      (car pic*))))
+
+(: person->href (-> Person String))
+(define (person->href pi)
+  (define href (url->string (person-href pi)))
+  (make-href href href))
+
+(: person->mailto (-> Person String))
+(define (person->mailto pi)
+  (define mailto (email->string (person-mailto pi)))
+  (make-href mailto mailto))
+
+(: student->university-id (-> Student Symbol))
+(define (student->university-id s)
+  (string->symbol (university-name (student-university s))))
+
 ;; -----------------------------------------------------------------------------
 ;; --- Default people
 
@@ -303,6 +386,7 @@
   (make-pi "Matthias Felleisen"
            #:mailto "matthias@ccs.neu.edu"
            #:href "www.ccs.neu.edu/home/matthias"
+           #:title "Trustee Professor"
            #:degree*
              `((phd    ,indiana-university    1987)
                (diplom ,th-karlsruhe          1984)
@@ -316,6 +400,7 @@
   (make-pi "Jan Vitek"
            #:mailto "j.vitek@neu.edu"
            #:href "http://janvitek.org"
+           #:title "Professor"
            #:degree*
              `((phd ,university-of-geneva   1999)
                (msc ,university-of-victoria 1995))
@@ -327,6 +412,7 @@
   (make-pi "Sam Tobin-Hochstadt"
            #:mailto "samth@cs.indiana.edu"
            #:href "http://homes.soic.indiana.edu/samth"
+           #:title "Assistant Professor"
            #:degree*
              `((phd ,northeastern-university 2010))
            #:position*
@@ -337,6 +423,7 @@
   (make-pi "Jeremy Siek"
            #:mailto "jsiek@indiana.edu"
            #:href "http://wphomes.soic.indiana.edu/jsiek/"
+           #:title "Associate Professor"
            #:degree*
              `((postdoc ,rice-university          2005)
                (phd     ,indiana-university       2005)
@@ -352,6 +439,7 @@
            #:full-name "Jeffrey S. Foster"
            #:mailto "jfoster@cs.umd.edu"
            #:href "http://www.cs.umd.edu/~jfoster"
+           #:title "Professor"
            #:degree*
              `((phd ,uc-berkeley 2002))
            #:position*
@@ -362,6 +450,7 @@
   (make-pi "Shriram Krishnamurthi"
            #:mailto "sk@cs.brown.edu"
            #:href "https://cs.brown.edu/~sk/"
+           #:title "Professor"
            #:degree*
              `((phd ,rice-university 2001))
            #:position*
@@ -370,6 +459,8 @@
 
 (define brianna-ren
   (make-student "Brianna Ren"
+                #:title 'phd
+                #:university university-of-maryland
                 #:mailto "bren@cs.umd.edu"
                 #:href "https://www.cs.umd.edu/~bren"
                 #:degree* `()
@@ -378,6 +469,8 @@
 (define asumu-takikawa
   (make-student "Asumu Takikawa"
                 #:mailto "asumu@ccs.neu.edu"
+                #:title 'phd
+                #:university northeastern-university
                 #:href "http://ccs.neu.edu/home/asumu"
                 #:degree*
                   `((phd ,northeastern-university 2016)
@@ -386,6 +479,8 @@
 (define joe-gibbs-politz
   (make-student "Joe Gibbs Politz"
                 #:mailto "joe@cs.brown.edu"
+                #:university brown-university
+                #:title 'phd
                 #:href "http://jpolitz.github.io"
                 #:degree*
                   `((phd ,brown-university 2016))))
@@ -393,6 +488,8 @@
 (define andrew-kent
   (make-student "Andrew Kent"
                 #:mailto "andmkent@indiana.edu"
+                #:title 'phd
+                #:university indiana-university
                 #:href "http://andmkent.com"
                 #:degree*
                   `((bs ,brigham-young-university 2013))))
@@ -400,12 +497,16 @@
 (define david-kempe-II
   (make-student "David Kempe II"
                 #:mailto "dkempe@indiana.edu"
+                #:title "Student"
+                #:university indiana-university
                 #:href "https://www.linkedin.com/in/david-kempe-ii-54402129"
                 #:degree* '()))
 
 (define ambrose-bonnaire-sergeant
   (make-student "Ambrose Bonnaire-Sergeant"
                 #:mailto "abonnairesergeant@gmail.com"
+                #:title 'phd
+                #:university indiana-university
                 #:href "http://ambrosebs.com"
                 #:degree* '()))
 (define ambrosebs ambrose-bonnaire-sergeant)
@@ -414,6 +515,8 @@
   ;; Technically, professor
   (make-student "Rowan Davies"
                 #:mailto "Rowan.Davies@cba.com.au"
+                #:title "Professor"
+                #:university university-of-western-australia
                 #:href "http://staffhome.ecm.uwa.edu.au/~00047175/"
                 #:degree*
                   `((phd ,carnegie-mellon-university 2005)
@@ -423,6 +526,8 @@
   (make-student "Matteo Cimini"
                 #:mailto "mcimini@indiana.edu"
                 #:href "http://cimini.info"
+                #:title 'postdoc
+                #:university indiana-university
                 #:degree*
                   `((phd ,reykjavik-university 2011)
                     (msc ,university-of-bologna 2008))))
@@ -431,12 +536,16 @@
   (make-student "Daniel Feltey"
                 #:mailto "daniel.feltey@eecs.northwestern.edu"
                 #:href "https://github.com/dfeltey"
+                #:title 'phd
+                #:university northwestern-university
                 #:degree*
                   `((ms ,northeastern-university 2015))))
 
 (define ben-greenman
   (make-student "Ben Greenman"
                 #:mailto "benjaminlgreenman@gmail.com"
+                #:title 'phd
+                #:university northeastern-university
                 #:href "http://ccs.neu.edu/home/types"
                 #:degree*
                   `((ms ,cornell-university 2014)
@@ -446,6 +555,8 @@
   (make-student "Max New"
                 #:full-name "Max S. New"
                 #:mailto "maxsnew@gmail.com"
+                #:title 'phd
+                #:university northeastern-university
                 #:href "http://maxsnew.github.io"
                 #:degree*
                   `((ms ,northwestern-university 2014)
@@ -507,12 +618,23 @@
 (define (publication->name pub)
   (make-href (publication-href pub) (publication-name pub)))
 
+(: word*->string (-> (Listof String) String))
+(define (word*->string w*)
+  (add-commas w* (lambda ([x : String]) x)))
+
 (: author*->string (-> (Listof Person) String))
 (define (author*->string a*)
-  (define fmt person->full-name)
+  (add-commas a* person->full-name))
+
+(: university*->string (-> (Listof University) String))
+(define (university*->string u*)
+  (add-commas u* university->string))
+
+(: add-commas (All (A) (-> (Listof A) (-> A String) String)))
+(define (add-commas a* fmt)
   (cond
    [(null? a*)
-    (raise-argument-error 'author*->string "Expected non-empty list of authors" a*)]
+    (raise-argument-error 'add-commas "Expected non-empty list of authors" a*)]
    [(null? (cdr a*))
     (fmt (car a*))]
    [(null? (cddr a*))
@@ -535,15 +657,19 @@
    [(publication? val)
     (publication->name val)]
    [(university? val)
-    (university->name val)]
+    (university->string val)]
    [else
     (raise-argument-error '->href "Cannot convert value to href" val)]))
 
-(: make-href (-> (U URL String) String String))
-(define (make-href href text)
+(: make-href (->* [(U URL String) String] [#:other String] String))
+(define (make-href href text #:other [other ""])
   (define str (if (url? href) (url->string href) href))
   (string-append
-    "<a href=\"" str "\">" text "</a>"))
+    "<a " other " href=\"" str "\">" text "</a>"))
+
+(: string->id (-> String String))
+(define (string->id str)
+  (string-join (string-split (string-downcase str)) "-"))
 
 ;; =============================================================================
 
@@ -563,9 +689,9 @@
   (check-equal? (degree-year (car (person-degree* shriram-krishnamurthi))) 2001)
   (check-equal? (position-year (car (pi-position* shriram-krishnamurthi))) 2000)
 
-  (check-equal? (person->full-name jan-vitek) "Jan Vitek")
-  (check-equal? (person->short-name jfoster) "Jeff Foster")
-  (check-equal? (person->full-name jfoster) "Jeffrey S. Foster")
+  (check-equal? (person-full-name jan-vitek) "Jan Vitek")
+  (check-true (regexp-match? "Jeff Foster" (person->short-name jfoster)))
+  (check-true (regexp-match? "Jeffrey S. Foster" (person->full-name jfoster)))
 
   (check-apply* person->adjective
    [samth
@@ -574,5 +700,16 @@
     => "her"]
    [asumu-takikawa
     => "his"])
+
+  (let ([h1 (pi->history matthias)]
+        [h2 (pi->history siek)])
+    (check-equal? (length h1) 3)
+    (check-equal? (length h2) 3)
+    (for ([h (in-list h1)]
+          [q (in-list '("Northeastern" "Rice" "Ph.D"))])
+      (check-true (regexp-match? q h)))
+    (for ([h (in-list h2)]
+          [q (in-list '("Indiana" "Colorado" "Indiana"))])
+      (check-true (regexp-match? q h))))
 
 )

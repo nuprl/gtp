@@ -4,12 +4,14 @@
 
 (provide
   PROJECT-NAME
+  AWARD-HREF
+  AWARD-NUMBER
   ;; TODO
 
   body-id
   ;; TODO
 
-  header footer nav sponsors
+  header footer nav sponsors default-doctype
   ;; TODO
 
   (all-from-out "templates/datatypes.rkt")
@@ -25,6 +27,8 @@
 ;; =============================================================================
 
 (define PROJECT-NAME "Gradual Typing Across the Spectrum")
+(define AWARD-HREF "http://www.nsf.gov/awardsearch/showAward?AWD_ID=1518844")
+(define AWARD-NUMBER "SHF 1518844")
 (define body-id "MyPage")
 
 (define PAGES '("Home" "About" "Research" "People" "Team"))
@@ -41,6 +45,9 @@
 (define (footer)
   (include-template "templates/footer.html"))
 
+(define (default-doctype)
+  (include-template "templates/doctype.html"))
+
 (define (nav current-page)
   (string-append
     "<div id=\"menu\" class=\"menu-fixed\">\n"
@@ -51,7 +58,10 @@
         "<li " (if (string=? p current-page) "class=\"active\"" "")
           (format " data-src=\"./images/menu/item_~a.png\"" i)
         ">"
-        (make-href (string-append (string-downcase p) ".html") p)
+        (make-href (if (string=? p "Home")
+                     "index.html"
+                     (string-append (string-downcase p) ".html"))
+                   p)
         "</li>")))
     "  </ul>\n"
     "</div>\n"))

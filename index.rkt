@@ -43,7 +43,7 @@
     (->href location)
     (if date (string-append ", " date) ".")))
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml1-strict.dtd">
+@default-doctype[]
 <html lang="en">
   @header[]
   <body id="@|body-id|">
@@ -110,8 +110,7 @@
           ]
         </div>
       </div>
-      <!-- Sponsors -->
-      @sponsors["Supported by the National Science Foundation (SHF 1518844)"]
+      @sponsors[(format "Supported by the National Science Foundation (~a)" AWARD-NUMBER)]
       @footer[]
     </div>
   </body>
