@@ -1,0 +1,201 @@
+	
+
+ 
+Award Abstract #1518844 
+ SHF: Large: Gradual Typing Across the Spectrum
+
+
+NSF Org:	CCF
+Division of Computing and Communication Foundations
+divider line
+Initial Amendment Date:	June 30, 2015
+divider line
+Latest Amendment Date:	March 24, 2016
+divider line
+Award Number:	1518844
+divider line
+Award Instrument:	Standard Grant
+divider line
+Program Manager:	Anindya Banerjee
+CCF Division of Computing and Communication Foundations
+CSE Direct For Computer & Info Scie & Enginr
+divider line
+Start Date:	July 1, 2015
+divider line
+End Date:	June 30, 2018 (Estimated)
+divider line
+Awarded Amount to Date:	$2,232,995.00
+divider line
+Investigator(s):	Matthias Felleisen matthias@ccs.neu.edu (Principal Investigator)
+Jan Vitek (Co-Principal Investigator)
+divider line
+Sponsor:	Northeastern University
+360 HUNTINGTON AVE
+BOSTON, MA 02115-5005 (617)373-2508
+divider line
+NSF Program(s):	SOFTWARE & HARDWARE FOUNDATION
+divider line
+Program Reference Code(s):	7925, 7943, 9251
+divider line
+Program Element Code(s):	7798
+ABSTRACT
+
+Title: SHF: Large: Gradual Typing Across the Spectrum
+
+The ``Gradual Typing Across the Spectrum'' project addresses an urgent, emergent need at the intersection of software maintenance and programming language research. Over the past 20 years, working software engineers have embraced so-called scripting languages for a variety of tasks. They routinely use JavaScript for interactive web pages, Ruby on Rails for server-side software, Python for data science, and so on. Software engineers choose these languages because they make prototyping easy, and before the engineers realize it, these prototypes evolve into large, working systems and escape into the real world. Like all software, these systems need to be maintained---mistakes must be fixed, their performance requires improvement, security gaps call for fixes, their functionality needs to be enhanced---but scripting languages render maintenance difficult. The intellectual merits of this project are to address all aspects of this real-world software engineering problem. In turn, the project's broader significance and importance are the deployment of new technologies to assist the programmer who maintains code in scripting languages, the creation of novel technologies that preserve the advantages of these scripting frameworks, and the development of curricular materials that prepares the next generation of students for working within these frameworks. 
+
+A few years ago, the PIs launched programming language research efforts to address this problem. They diagnosed the lack of sound types in scripting languages as one of the major factors. With types in conventional programming languages, programmers concisely communicate design information to future maintenance workers; soundness ensures the types are consistent with the rest of the program. In response, the PIs explored the idea of gradual typing, that is, the creation of a typed sister language (one per scripting language) so that (maintenance) programmers can incrementally equip systems with type annotations. Unfortunately, these efforts have diverged over the years and would benefit from systematic cross-pollination.
+
+With support from this grant, the PIs will systematically explore the spectrum of their gradual typing system with a three-pronged effort. First, they will investigate how to replicate results from one project in another. Second, they will jointly develop an evaluation framework for gradual typing projects with the goal of diagnosing gaps in the efforts and needs for additional research. Third, they will explore the creation of new scripting languages that benefit from the insights of gradual typing research.
+
+Gradual typing enables both static and dynamic typing in
+the same program, and makes it convenient to migrate code regions between
+the two typing disciplines. One goal of gradual typing is to provide
+all the benefits of static typing, such as efficiency, in statically-typed
+regions. However, this goal is elusive: the standard approach to mutable
+references imposes run-time overhead in statically-typed regions and
+alternative approaches are too conservative, either statically or at runtime.
+In this paper we present a new semantics called monotonic references
+which imposes none of the run-time overhead of dynamic typing in
+statically typed regions. With this design, casting a reference may cause
+a heap cell to become more statically typed (but not less). Retaining
+type safety is challenging with strong updates to the heap. Nevertheless,
+we have a mechanized proof of type safety. Further, we present blame
+tracking for monotonic references and prove a blame theorem.
+Siek and Taha (2006) introduce gradual typing as a theory for integrating static and dynamic typing in programming languages. Siek et al. (2015) expand on the goals of gradual typing. The goals are:
+
+support both fully static and fully dynamic typing,
+enable gradual migration between static and dynamic regions,
+provide sound interoperability between such regions, and
+static regions of code are as efficient as they would be in a statically typed language.
+In addition to these goals, we add that dynamic regions should perform within a constant factor of the time in dynamically typed languages.
+
+However, there is a tension between enabling interoperability between static and dynamic regions and achieving efficiency, especially in static regions of code. The purpose of our present work is to study the essential efficiency of gradual typing by constructing a prototype compiler in which we can implement approaches to minimizing overheads and carefully evaluate their impact on efficiency through empirical studies. Towards this goal, we give a status report on Schml, a compiler that translates the Gradually Typed Lambda Calculus to C.
+
+Over the past 20 years, programmers have embraced dynamically-typed programming languages.
+By now, they have also come to realize that programs in these languages lack reliable type information
+for software engineering purposes. Gradual typing addresses this problem; it empowers
+programmers to annotate an existing system with sound type information on a piecemeal basis.
+This paper presents an implementation of a gradual type system for a full-featured class-based
+language as well as a novel performance evaluation framework for gradual typing.
+
+Programmers have come to embrace dynamically-typed languages
+for prototyping and delivering large and complex systems. When it
+comes to maintaining and evolving these systems, the lack of explicit
+static typing becomes a bottleneck. In response, researchers
+have explored the idea of gradually-typed programming languages
+which allow the incremental addition of type annotations to software
+written in one of these untyped languages. Some of these
+new, hybrid languages insert run-time checks at the boundary between
+typed and untyped code to establish type soundness for the
+overall system. With sound gradual typing, programmers can rely
+on the language implementation to provide meaningful error messages
+when type invariants are violated. While most research on
+sound gradual typing remains theoretical, the few emerging implementations
+suffer from performance overheads due to these checks.
+None of the publications on this topic comes with a comprehensive
+performance evaluation. Worse, a few report disastrous numbers.
+In response, this paper proposes a method for evaluating the performance
+of gradually-typed programming languages. The method
+hinges on exploring the space of partial conversions from untyped
+to typed. For each benchmark, the performance of the different versions
+is reported in a synthetic metric that associates runtime overhead
+to conversion effort. The paper reports on the results of applying
+the method to Typed Racket, a mature implementation of
+sound gradual typing, using a suite of real-world programs of various
+sizes and complexities. Based on these results the paper concludes
+that, given the current state of implementation technologies,
+sound gradual typing faces significant challenges. Conversely, it
+raises the question of how implementations could reduce the overheads
+associated with soundness and how tools could be used to
+steer programmers clear from pathological cases.
+
+Many languages are beginning to integrate dynamic and static typing.
+Siek and Taha offered gradual typing as an approach to this integration
+that provides the benefits for a coherent and full-span migration
+between the two disciplines. However, the literature lacks
+a general methodology for turning statically-typed languages into
+gradually typed ones. Our main contribution is the Gradualizer: a
+general procedure that takes as input a type system and automatically
+produces the gradually typed version and the compilation
+procedure to the cast calculus. Our procedure handles a large class
+of type systems and we show the applicability of the Gradualizer
+by recovering a wealth of gradually typed systems and generating
+novel ones. We prove that the Gradualizer always generates systems
+that are correct with respect to three formal criteria. We also
+report on an implementation of the Gradualizer in Haskell that takes
+type systems expressed in λ-prolog and outputs their gradualized
+type system in λ-prolog.
+
+Dynamic languages such as Ruby, Python, and JavaScript
+have many compelling benefits, but the lack of static types
+means subtle errors can remain latent in code for a long time.
+While many researchers have developed various systems to
+bring some of the benefits of static types to dynamic languages,
+prior approaches have trouble dealing with metaprogramming,
+which generates code as the program executes. In
+this paper, we propose Hummingbird, a new system that uses
+a novel technique, just-in-time static type checking, to type
+check Ruby code even in the presence of metaprogramming.
+In Hummingbird, method type signatures are gathered dynamically
+at run-time, as those methods are created. When
+a method is called, Hummingbird statically type checks the
+method body against current type signatures. Thus, Hummingbird
+provides thorough static checks on a per-method
+basis, while also allowing arbitrarily complex metaprogramming.
+For performance, Hummingbird memoizes the static
+type checking pass, invalidating cached checks only if necessary.
+We formalize Hummingbird using a core, Ruby-like
+language and prove it sound. To evaluate Hummingbird, we
+applied it to six apps, including three that use Ruby on Rails,
+a powerful framework that relies heavily on metaprogramming.
+We found that all apps typecheck successfully using
+Hummingbird, and that Hummingbird’s performance overhead
+is reasonable. We applied Hummingbird to earlier versions
+of one Rails app and found several type errors that had
+been introduced and then fixed. Lastly, we demonstrate using
+Hummingbird in Rails development mode to typecheck
+an app as live updates are applied to it
+
+Ruby on Rails (or just “Rails”) is a popular
+web application framework built on top of Ruby, an objectoriented
+scripting language. While Ruby’s powerful features
+such as dynamic typing help make Rails development extremely
+lightweight, this comes at a cost. Dynamic typing in particular
+means that type errors in Rails applications remain latent until
+run time, making debugging and maintenance harder. In this
+paper, we describe DRails, a novel tool that brings static typing
+to Rails applications to detect a range of run time errors.
+DRails works by translating Rails programs into pure Ruby
+code in which Rails’s numerous implicit conventions are made
+explicit. We then discover type errors by applying DRuby,
+a previously developed static type inference system, to the
+translated program. We ran DRails on a suite of applications
+and found that it was able to detect several previously unknown
+errors.
+
+In in-flow peer review, students provide feedback to one another on intermediate artifacts on their way to a final submission. Prior work has studied examples and tests as a potentially useful initial artifact for review. Unfortunately, large test suites are onerous to produce and especially to review. We instead propose the notion of a sweep, an artificially constrained set of tests that illustrates common and interesting behavior. We present experimental data across several courses that show that sweeps have reasonable quality, and are also a good target for peer review; for example, students usually (over half the time) suggest new tests to one another in a review.
+
+Computing educators have used peer review in various ways in courses at many levels. Few of these efforts have applied peer review to multiple deliverables (such as specifications, tests, and code) within the same programming problem, or to assignments that are still in progress (as opposed to completed). This paper describes CaptainTeach, a programming environment enhanced with peer-review capabilities at multiple stages within assignments in progress. Multi-stage, in-flow peer review raises many logistical and pedagogical issues. This paper describes CaptainTeach and our experience using it in two undergraduate courses (one first-year and one upper-level); our analysis emphasizes issues that arise from the conjunction of multiple stages and in-flow reviewing, rather than peer review in general.
+We present Pycket, a high-performance tracing JIT compiler for
+Racket. Pycket supports a wide variety of the sophisticated features
+in Racket such as contracts, continuations, classes, structures,
+dynamic binding, and more. On average, over a standard suite of
+benchmarks, Pycket outperforms existing compilers, both Racket’s
+JIT and other highly-optimizing Scheme compilers. Further, Pycket
+provides much better performance for proxies than existing systems,
+dramatically reducing the overhead of contracts and gradual typing.
+We validate this claim with performance evaluation on multiple
+existing benchmark suites.
+The Pycket implementation is of independent interest as an application
+of the RPython meta-tracing framework (originally created
+for PyPy), which automatically generates tracing JIT compilers
+from interpreters. Prior work on meta-tracing focuses on bytecode
+interpreters, whereas Pycket is a high-level interpreter based on the
+CEK abstract machine and operates directly on abstract syntax trees.
+Pycket supports proper tail calls and first-class continuations. In the
+setting of a functional language, where recursion and higher-order
+functions are more prevalent than explicit loops, the most significant
+performance challenge for a tracing JIT is identifying which control
+flows constitute a loop—we discuss two strategies for identifying
+loops and measure their impact.
