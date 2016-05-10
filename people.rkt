@@ -33,7 +33,6 @@
      (string-append
        "<div class=\"col-md-3 info-1" (if pic-on-left? "" " col-md-offset-1") "\">\n"
           (person-title pi) "<br />\n"
-          (person->mailto pi) "<br />\n"
           (person->href pi)
        "</div>\n"))
    (string-append
