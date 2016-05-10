@@ -150,13 +150,13 @@
           <p>
             To accomodate the flow-sensitive reasoning commonly used in
             untyped programs, Typed Racket employs
-            @make-href["http://www.ccs.neu.edu/racket/pubs/icfp10-thf.pdf" "occurrence-typing"]:
+            @make-href["http://www.ccs.neu.edu/racket/pubs/icfp10-thf.pdf" "occurrence-typing:"]
             a technique for refining the type of variables based on predicates
             prior to each occurrence of the variable in the control flow graph.
             Typed Racket is also macro-extensible and includes types for
-            @make-href["http://www.ccs.neu.edu/racket/pubs/esop09-sthf.pdf" "variable-arity, polymorphic functions"];
-            @make-href["http://www.ccs.neu.edu/racket/pubs/esop13-tsth.pdf" "continuations"]; and
-            @make-href["http://www.ccs.neu.edu/racket/pubs/ecoop2015-takikawa-et-al.pdf" "first-class classes"].
+            @make-href["http://www.ccs.neu.edu/racket/pubs/esop09-sthf.pdf" "variable-arity, polymorphic functions;"]
+            @make-href["http://www.ccs.neu.edu/racket/pubs/esop13-tsth.pdf" "continuations;"] and
+            @make-href["http://www.ccs.neu.edu/racket/pubs/ecoop2015-takikawa-et-al.pdf" "first-class classes."]
           </p>
         }
         @project[

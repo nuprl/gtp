@@ -91,7 +91,9 @@
           ;; -- IU
           matteo-cimini
           ambrosebs
+          andre-kuhlenschmidt
           andrew-kent
+          spenser-bauman
           david-kempe-II
           ;; -- Brown
           jack-wrenn

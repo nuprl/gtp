@@ -36,6 +36,22 @@
                 #:degree*
                   `((phd ,brown-university 2016))))
 
+(define andre-kuhlenschmidt
+  (make-student "Andre Kuhlenschmidt"
+                #:mailto "akuhlens@indiana.edu"
+                #:title 'phd
+                #:university indiana-university
+                #:href "http://www.crest.iu.edu/node/164"
+                #:degree* '()))
+
+(define spenser-bauman
+  (make-student "Spenser Bauman"
+                #:mailto "sabauman@indiana.edu"
+                #:title 'phd
+                #:university indiana-university
+                #:href "http://www.crest.iu.edu/node/194"
+                #:degree* '()))
+
 (define andrew-kent
   (make-student "Andrew Kent"
                 #:mailto "andmkent@indiana.edu"
@@ -44,6 +60,8 @@
                 #:href "http://andmkent.com"
                 #:degree*
                   `((bs ,brigham-young-university 2013))))
+
+
 
 (define david-kempe-II
   (make-student "David Kempe II"
