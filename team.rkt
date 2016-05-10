@@ -5,7 +5,7 @@
 @(define (team-members . tm*)
    (string-join
      (for/list ([s* (in-hash-values (group-by-university tm*))])
-       (student*->string s*))))
+       (student*->string (reverse s*)))))
 
 @(define (student*->string s*)
    (define u (student-university (car s*))) ;; All should have the same Uni.
@@ -65,14 +65,25 @@
           </div>
         </div>
 
+        @; 2016-05-10: Sorting members manually, for now
         @team-members[
+          ;; -- UMD
           brianna-ren
-          andrew-kent
-          ambrosebs
-          david-kempe-II
+          ;; -- IU
           matteo-cimini
+          ambrosebs
+          andrew-kent
+          david-kempe-II
+          ;; -- Brown
+          jack-wrenn
+          justin-pombrio
+          matthew-kolosick
+          ;; -- NEU
+          stephen-chang
+          benjamin-chung
           ben-greenman
-          max-new
+          alex-knauth
+          zeina-migeed
         ]
 
         <div class="col-md-12"><p></p></div>

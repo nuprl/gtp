@@ -6,6 +6,18 @@
 
 ;; =============================================================================
 
+(define harvard-university
+  (make-university "Harvard University"
+                   #:href "https://www.seas.harvard.edu/computer-science"))
+
+(define princeton-university
+  (make-university "Princeton University"
+                   #:href "https://www.cs.princeton.edu/"))
+
+(define wpi
+  (make-university "WPI"
+                   #:href "http://www.wpi.edu/academics/cs/"))
+
 (define northeastern-university
   (make-university "Northeastern University"
                    #:href "http://www.ccis.northeastern.edu/"))

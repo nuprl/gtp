@@ -96,7 +96,7 @@
 ;; --- Types for people / students / professors
 
 (define-type Year Natural)
-(define-type Degree (U 'phd 'diplom 'ms 'msc 'postdoc 'bs 'bsc))
+(define-type Degree (U 'phd 'me 'bse 'diplom 'ms 'msc 'postdoc 'bs 'bsc))
 (define-type D+ (List Degree University Year))
 (define-type Degree* (Listof D+))
 (define-type Email email)

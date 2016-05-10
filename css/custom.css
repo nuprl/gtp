@@ -312,7 +312,8 @@ h4
   font-weight: bold;
 }
 .student-icon {
-    width: 100px;
+    max-height: 100px;
+    max-width: 100px;
 }
 /* Responsive menu */
 /* Small Devices, Tablets */

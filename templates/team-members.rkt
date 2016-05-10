@@ -6,6 +6,8 @@
 
 ;; =============================================================================
 
+(define anon "a@a.a")
+
 (define brianna-ren
   (make-student "Brianna Ren"
                 #:title 'phd
@@ -110,6 +112,64 @@
                 #:degree*
                   `((ms ,northwestern-university 2014)
                     (bs ,northwestern-university 2014))))
+
+(define benjamin-chung
+  (make-student "Benjamin Chung"
+                #:title 'phd
+                #:university northeastern-university
+                #:mailto "bchung@ccs.neu.edu"
+                #:href "http://benchung.github.io/"
+                #:degree* `((bs ,carnegie-mellon-university 2015))))
+
+(define stephen-chang
+  (make-student "Stephen Chang"
+                #:title "Lecturer, Researcher"
+                #:university northeastern-university
+                #:mailto "stchang@ccs.neu.edu"
+                #:href "http://www.ccs.neu.edu/home/stchang/"
+                #:degree* `((phd ,northeastern-university 2014)
+                            (me ,harvard-university 2008)
+                            (bse ,princeton-university 2001))))
+
+(define alex-knauth
+  (make-student "Alex Knauth"
+                #:title "Student"
+                #:mailto anon
+                #:university northeastern-university
+                #:href "https://github.com/AlexKnauth"
+                #:degree* '()))
+
+(define zeina-migeed
+  (make-student "Zeina Migeed"
+                #:title "Student"
+                #:university northeastern-university
+                #:mailto "abdelmigeed.z@husky.neu.edu"
+                #:href "http://github.com/migeed-z"
+                #:degree* '()))
+
+(define justin-pombrio
+  (make-student "Justin Pombrio"
+                #:title 'phd
+                #:university brown-university
+                #:mailto "justinlpombrio@gmail.com"
+                #:href "http://justinpombrio.net/"
+                #:degree* `((bs ,wpi 2011))))
+
+(define jack-wrenn
+  (make-student "Jack Wrenn"
+                #:title 'phd
+                #:university brown-university
+                #:mailto "johnswrenn@gmail.com"
+                #:href "https://github.com/jswrenn"
+                #:degree* '()))
+
+(define matthew-kolosick
+  (make-student "Matthew Kolosick"
+                #:mailto "kolosick@ccs.neu.edu"
+                #:title "Student"
+                #:university brown-university
+                #:href "https://github.com/mkolosick"
+                #:degree* '()))
 
 ;; =============================================================================
 
