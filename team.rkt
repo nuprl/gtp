@@ -1,14 +1,14 @@
 #lang scribble/text
-@require["templates.rkt"]
+@require["templates.rkt" racket/string]
 
 
 @(define (team-members . tm*)
    (string-join
-     (for/list ([s* (in-hash-values (group-by-university tm*))])
-       (student*->string (reverse s*)))))
+     (for/list ([u+s* (in-list (group-by-university tm*))])
+       (student*->string (reverse (cdr u+s*))))))
 
 @(define (student*->string s*)
-   (define u (student-university (car s*))) ;; All should have the same Uni.
+   (define u (student-university (car s*)))
    (string-append
      "<div class=\"col-md-12\">\n"
      "  <h3 class=\"red-back-big\">" (university-name u) "</h3>"
@@ -33,7 +33,20 @@
    (for ([tm (in-list tm*)])
      (define uni (student->university-id tm))
      (hash-set! H uni (cons tm (hash-ref H uni (lambda () '())))))
-   H)
+   (sort (hash->list H) symbol<? #:key car))
+
+@(define (admissions u+href*)
+  (string-append
+    "<ul>"
+    (string-join
+      (for/list ([u+href (in-list u+href*)])
+        (define u (car u+href))
+        (define href (cadr u+href))
+        (string-append
+          "<li>"
+          @make-href[href (string-append @university-name[u] " admissions.")]
+          "</li>")))
+    "</ul>"))
 
 @; =============================================================================
 
@@ -60,6 +73,12 @@
                   you're in town, or visit our websites to learn how to apply
                   for your Masters, Ph.D, or post-doc.
                 </p>
+                @admissions[`(
+                  (,brown-university "https://www.brown.edu/academics/gradschool/apply")
+                  (,indiana-university "http://www.soic.indiana.edu/graduate/admissions/how-to-apply/computer-science.html")
+                  (,northeastern-university "http://www.ccis.northeastern.edu/academics/phd/phd-apply/")
+                  (,university-of-maryland "https://gradschool.umd.edu/admissions")
+                )]
               </div>
             </div>
           </div>
