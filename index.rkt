@@ -37,11 +37,12 @@
      e
      "</div>\n"))
 
-@(define (pi-meeting #:location location #:date [date #f])
+@(define (pi-meeting #:location location #:date [date #f] #:schedule [schedule #f])
   (string-append
     "Upcoming PI meeting at "
     (->href location)
-    (if date (string-append ", " date) ".")))
+    (if date (string-append ", " date ".") ".")
+    (if schedule @make-href[schedule " [Schedule]"] "")))
 
 @; =============================================================================
 
@@ -108,6 +109,7 @@
             @pi-meeting[
               #:date "2016-05-17"
               #:location northeastern-university
+              #:schedule "pi2016/pi2016.html"
             ]
           ]
         </div>
