@@ -191,6 +191,20 @@
           </ul>
         }
         @project[
+          #:name "Pycket"
+          #:href "http://www.github.com/samth/pycket"
+        ]{
+          <p>
+            Pycket is a high-performance tracing JIT compiler for Racket.
+            Pycket supports a wide variety of the sophisticated features
+            in Racket such as contracts, continuations, classes, structures,
+            and dynamic binding.
+            Compiling standard Typed Racket code through Pycket can
+            @make-href["http://www.ccs.neu.edu/home/samth/pycket-draft.pdf" "significantly reduce"] the performance overhead of
+            sound gradual typing.
+          </p>
+        }
+        @project[
           #:name "R"
           #:href "http://janvitek.org"
         ]{
