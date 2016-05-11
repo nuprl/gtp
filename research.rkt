@@ -109,7 +109,7 @@
         }@li{
           Metaprogramming support: DRuby includes a combined static
           and dynamic analysis to precisely model dynamic meta-programming
-          constructs, such as <tt>eval</tt> and <tt>method_missing</tt>.
+          constructs, such as @tt{eval} and @tt{method_missing}.
       }})]
     @project[
       #:name "Typed Racket"
