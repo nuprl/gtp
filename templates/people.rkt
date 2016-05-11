@@ -9,7 +9,10 @@
     (sam-tobin-hochstadt samth)
     (shriram-krishnamurthi sk)
     (jeff-foster jfoster)
-    (jeremy-siek siek)))
+    (jeremy-siek siek)
+
+    (ambrose-bonnaire-sergeant ambrosebs)
+    (deyaaeldeenalmahallawi da)))
 
 (require "datatypes.rkt" "universities.rkt")
 
@@ -142,8 +145,6 @@
                 #:degree*
                   `((bs ,brigham-young-university 2013))))
 
-
-
 (define david-kempe-II
   (make-student "David Kempe II"
                 #:mailto "dkempe@indiana.edu"
@@ -159,7 +160,6 @@
                 #:university indiana-university
                 #:href "http://ambrosebs.com"
                 #:degree* '()))
-(define ambrosebs ambrose-bonnaire-sergeant)
 
 (define rowan-davies
   ;; Technically, professor
@@ -181,12 +181,12 @@
                 #:degree*
                   '()))
 
-(define da
+(define deyaaeldeenalmahallawi
   (make-student "Deyaaeldeen Almahallawi"
                 #:title 'phd
                 #:university indiana-university
                 #:href "http://deyaaeldeen.github.io/"
-                #:mailto anon
+                #:mailto "dalmahal@indiana.edu"
                 #:degree*
                   '()))
 
@@ -195,7 +195,7 @@
                 #:title 'phd
                 #:university indiana-university
                 #:href "http://homes.soic.indiana.edu/mvitouse/"
-                #:mailto anon
+                #:mailto "mmvitousek@gmail.com"
                 #:degree*
                   `()))
 
@@ -204,7 +204,7 @@
                 #:title 'phd
                 #:university indiana-university
                 #:href "http://caner.derici.me/"
-                #:mailto anon
+                #:mailto "cderici@indiana.edu"
                 #:degree*
                   '()))
 
@@ -213,7 +213,7 @@
                 #:title 'phd
                 #:university indiana-university
                 #:href "http://www.soic.indiana.edu/graduate/directory/"
-                #:mailto anon
+                #:mailto "rawalia@indiana.edu"
                 #:degree*
                   '()))
 
@@ -222,7 +222,7 @@
                 #:title 'postdoc
                 #:university indiana-university
                 #:href "http://davidchristiansen.dk/"
-                #:mailto anon
+                #:mailto "davidchr@indiana.edu"
                 #:degree*
                   `((phd ,it-copenhagen 2016))))
 
@@ -287,7 +287,7 @@
 (define alex-knauth
   (make-student "Alex Knauth"
                 #:title "Student"
-                #:mailto anon
+                #:mailto "alexander@knauth.org"
                 #:university northeastern-university
                 #:href "https://github.com/AlexKnauth"
                 #:degree* '()))
