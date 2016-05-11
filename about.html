@@ -1,272 +1,176 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml1-strict.dtd">
-<html lang="en">
-  <div class="body" data-stellar-background-ratio="1.5"></div>
-<!-- Mirrored from www.proposal.dev.catchx.cz/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Apr 2016 11:05:34 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Gradual Typing Across the Spectrum">
-  <meta name="keywords" content="programming, language, project, science">
-  <title>Gradual Typing Across the Spectrum</title>
-  <link  rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/animate.css" />
-  <link  rel="stylesheet" href="css/custom.css" />
-  <link href="http://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet" type="text/css" />
-  <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
+<!DOCTYPE html>
+<html lang="en"><div class="body" data-stellar-background-ratio="1.5"></div>
+<head><meta charset="UTF-8" />
+<meta name="description" contents="Gradual Typing Across the Spectrum" />
+<meta name="keywords" content="programming, language, gradual, typing" />
+<title>Gradual Typing Across the Spectrum</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" /><link rel="stylesheet" href="css/animate.css" /><link rel="stylesheet" href="css/custom.css" />
+<link href="http://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
+<link rel="icon" size="16x16" href="images/favicon-16x16.png" /><link rel="icon" size="32x32" href="images/favicon-32x32.png" /><link rel="icon" size="96x96" href="images/favicon-96x96.png" />
+<script src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script><script type="text/javascript" src="js/bootstrap.min.js"></script><script type="text/javascript" src="js/custom.js"></script><script type="text/javascript" src="js/stellar.js"></script></head>
+<div class="main-header-container"><div class="shadow-back"><div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/prl.png" /></div>
+<div class="main-header"><h1>Gradual Typing Across the Spectrum</h1></div></div></div>
+<body id="top"><div id="menu" class="menu-fixed"><span id="menu-icon"><span class="glyphicon glyphicon-menu-hamburger"></span></span>
+<ul><li class="" data-src="./images/menu/item_1.png"><a href="index.html">Home</a></li><li class="active" data-src="./images/menu/item_2.png"><a href="about.html">About</a></li><li class="" data-src="./images/menu/item_3.png"><a href="research.html">Research</a></li><li class="" data-src="./images/menu/item_4.png"><a href="people.html">People</a></li><li class="" data-src="./images/menu/item_5.png"><a href="team.html">Team</a></li></ul></div>
+<div class="body-content">  <div id="content"><div class="col-md-12"><h2 class="red-back-big-big">Project Overview</h2>
+<div class="col-md-12 card"><p>With the rise of the web, dynamically typed &mdash; often called
+<i>untyped</i> &mdash; programming languages have emerged as
+major development platforms.
+Untyped languages now make up around half of the top-ten languages
+named in developer positions posted on job listing sites such as
+Amazon, Slashdot, and SourceForge; they include JavaScript, PHP,
+Perl, Python, Ruby, Shell, SQL, and Visual Basic.
+Although these languages are dubbed <i>scripting languages</i>
+&mdash; implying small, possibly throw-away snippets of code &mdash;
+developers routinely use these languages to produce critical pieces
+of software infrastructure, including
+<a href="https://secure.pensionsmyndigheten.se">a country's</a>
+<a href="http://janvitek.org/talks/dls09.pdf">entire pension system</a>,
+the software product of
+<a href="https://blog.twitter.com/2011/twitter-search-is-now-3x-faster">companie</a>s
+such as <a href="http://www.zdnet.com/article/why-facebook-hasnt-ditched-php">Facebook</a>,
+and <a href="http://erlang.org/faq/introduction.html#idp3203003201">more</a>.
+Among many reasons, developers <a href="http://www.artima.com/scalazine/articles/twitter_on_scala.html">&quot;cite&quot;</a>
+the flexibility of untyped languages as they allow the rapid
+construction of robust and useful prototypes.
+When it comes to software maintenance, however, untyped languages
+are at a <a href="http://programmers.stackexchange.com/questions/221615/why-do-dynamic-languages-make-it-more-difficult-to-maintain-large-codebases">disadvantage</a>
+For many maintenance tasks &mdash; debugging, adding features,
+closing security holes &mdash; programmers often manipulate code
+that they have never seen before or have not seen in a long time.
+Without type information, they need to mentally reconstruct
+the signatures of classes, methods, fields, and functions before
+they modify the code.
+Depending on the size and interconnectedness of the system,
+this reconstruction process adds a serious amount of work to any
+maintenance task.</p><p>This project brings together a diverse set of researchers that
+maintain practical gradual typing systems including:
+<a href="research.html#reticulated-python">Reticulated Python</a>,
+<a href="research.html#diamondback-ruby">Diamondback Ruby</a>,
+<a href="research.html#racket">Typed Racket</a>,
+<a href="research.html#pyret">Pyret</a>,
+and an emerging gradual type system for the
+R language.
+The intention is to identify principles of gradual typing that
+hold across the spectrum.</p><p>Significant open questions:
+<ul><li><b>Full language integration:</b> None of the existing systems
+cope with all the features that are found in modern programming
+languages (e.g. reflection, concurrency, dynamic code generation).</li><li><b>Efficient soundness:</b> Researchers have chosen different points
+in the space between soundness (the type system makes
+meaningful guarantees ahead of time) and performance
+(integrations of typed and untyped components may
+misinterpret bits and behave like C/C++).
+These decisions have been made on an ad-hoc basis and call
+for a thorough investigation.</li><li><b>Empirical evaluation:</b> The design of gradually typed
+languages must be informed by
+<a href="http://www.cmu.edu/teaching/assessment/howto/basics/formative-summative.html">summative</a>
+evaluations of
+gradual typing's feasibility and usefulness.
+The former calls for studies of every single
+path from untyped to a typed system; the latter calls for
+user studies concerning productivity benefits.)</li></ul></p></div></div>
+<div class="col-md-12"><h3 class="red-back-big">Gradual Typing Across the Spectrum</h3>
+<div class="col-md-12 card"><p><i>Gradual Typing Across the Spectrum</i> is funded by the National Science Foundation
+(<a href="http://www.nsf.gov/awardsearch/showAward?AWD_ID=1518844">SHF 1518844</a>).</p><p>Principal investigators are<a href="www.ccs.neu.edu/home/matthias">Matthias Felleisen</a>, <a href="http://janvitek.org">Jan Vitek</a>, <a href="https://cs.brown.edu/~sk/">Shriram Krishnamurthi</a>, <a href="http://homes.soic.indiana.edu/samth">Sam Tobin-Hochstadt</a>, <a href="http://wphomes.soic.indiana.edu/jsiek/">Jeremy Siek</a>, and <a href="http://www.cs.umd.edu/~jfoster">Jeffrey S. Foster</a>.</p><p>Participating universities are
+<a href="http://www.ccis.northeastern.edu/">Northeastern University</a>, <a href="http://cs.brown.edu">Brown University</a>, <a href="http://cs.indiana.edu">Indiana University</a>, and <a href="http://cs.umd.edu">University of Maryland, College Park</a>.</p></div></div></div>
+<div id="sponsors" class="col-md-12"><center><h4 class="red-back"></h4></center></div>
+<footer class="col-md-12"><div class="container text-center"><hr />
+<div class="copyright"><p class="text-center">© Copyright Programming Research Laboratory 2016-2017 | made by
+<a href="http://www.catchexception.cz/" target="_blank">Catchexception s.r.o.</a></p></div>
+<a href="#top" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a></div></footer>
+<script type="text/javascript">$(document).on('click', '.list', function (e) {
+var ul = $(this).parent('li').find('ul');
+ul.toggleClass('active');
+var i = 1;
+ul.children('li').each(function(){
+$(this).delay(200*i).toggle('slow');
+i++;
+});
 
-  <link rel="icon" size="96x96" href="images/favicon-16x16.png" />
-  <link rel="icon" size="32x32" href="images/favicon-32x32.png" />
-  <link rel="icon" size="16x16" href="images/favicon-96x96.png" />
+});</script><script type="text/javascript">function stopTopParallax()
+{
+var mainBanner = $('#main-banner');
+if($('.shadow-back').offset().top >150)
+{
+mainBanner.css('position','fixed');
+mainBanner.css('height','75px');
+mainBanner.css('z-index','2');
+$('#content').css('margin-top','260px');
+} else {
+mainBanner.css('position','relative');
+mainBanner.css('height','260px');
+mainBanner.css('z-index','0');
+$('#content').css('margin-top','0px');
+}
+}
+function checkOffset___() {
+if($('#menu').offset().top + $('#menu').height()
+>= $('#sponsors').offset().top -150)
+{
+var height = $('#content').height()-470;
+$('#menu').removeClass('fixed-menu');
+$('#menu').addClass('absolute-menu');
+console.log();
+$('#menu').css('bottom','-'+height+'px');
+}
 
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/custom.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script type="text/javascript" src="js/stellar.js"></script>
+if($(document).scrollTop() + window.innerHeight < $('#sponsors').offset().top+150)
+                                                  {
+                                                  $('#menu').removeClass('absolute-menu');
+                                                  $('#menu').addClass('fixed-menu');
+                                                  $('#menu').css('bottom','');
+                                                  }
 
-</head>
-<div class="main-header-container">
-  <div class="shadow-back">
-    <div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/prl.png"></div>
-    <div class="main-header"><h1>Gradual Typing Across the Spectrum</h1></div>
-  </div>
-</div>
-  <body id="MyPage">
-    <div id="menu" class="menu-fixed">
-  <span id="menu-icon"><span class="glyphicon glyphicon-menu-hamburger"></span></span>
-  <ul>
-<li  data-src="./images/menu/item_1.png"><a  href="index.html">Home</a></li> <li class="active" data-src="./images/menu/item_2.png"><a  href="about.html">About</a></li> <li  data-src="./images/menu/item_3.png"><a  href="research.html">Research</a></li> <li  data-src="./images/menu/item_4.png"><a  href="people.html">People</a></li> <li  data-src="./images/menu/item_5.png"><a  href="team.html">Team</a></li>  </ul>
-</div>
-
-    <!-- Body -->
-    <div class="body-content">
-      <div id="content">
-        <div class="col-md-12">
-          <h2 class="red-back-big-big">Project Overview</h2>
-          <div class="col-md-12 card" >
-            <p>
-              With the rise of the web, dynamically typed &mdash; often called
-              <i>untyped</i> &mdash; programming languages have emerged as
-              major development platforms.
-              Untyped languages now make up around half of the top-ten languages
-              named in developer positions posted on job listing sites such as
-              Amazon, Slashdot, and SourceForge; they include JavaScript, PHP,
-              Perl, Python, Ruby, Shell, SQL, and Visual Basic.
-              Although these languages are dubbed <i>scripting languages</i>
-              &mdash; implying small, possibly throw-away snippets of code &mdash;
-              developers routinely use these languages to produce critical pieces
-              of software infrastructure, including
-              <a  href="https://secure.pensionsmyndigheten.se">a country's</a>
-              <a  href="http://janvitek.org/talks/dls09.pdf">entire pension system</a>,
-              the software product of
-              <a  href="https://blog.twitter.com/2011/twitter-search-is-now-3x-faster">companies</a>
-              such as <a  href="http://www.zdnet.com/article/why-facebook-hasnt-ditched-php">Facebook</a>,
-              and <a  href="http://erlang.org/faq/introduction.html#idp3203003201">more</a>.
-              Among many reasons, developers <a  href="http://www.artima.com/scalazine/articles/twitter_on_scala.html">cite</a>
-              the flexibility of untyped languages as they allow the rapid
-              construction of robust and useful prototypes.
-              When it comes to software maintenance, however, untyped languages
-              are at a <a  href="http://programmers.stackexchange.com/questions/221615/why-do-dynamic-languages-make-it-more-difficult-to-maintain-large-codebases">disadvantage</a>
-              For many maintenance tasks &mdash; debugging, adding features,
-              closing security holes &mdash; programmers often manipulate code
-              that they have never seen before or have not seen in a long time.
-              Without type information, they need to mentally reconstruct
-              the signatures of classes, methods, fields, and functions before
-              they modify the code.
-              Depending on the size and interconnectedness of the system,
-              this reconstruction process adds a serious amount of work to any
-              maintenance task.
-            </p>
-            <p>
-              This project brings together a diverse set of researchers that
-              maintain practical gradual typing systems including:
-              <a  href="research.html#reticulated-python">Reticulated Python</a>,
-              <a  href="research.html#diamondback-ruby">Diamondback Ruby</a>,
-              <a  href="research.html#racket">Typed Racket</a>,
-              <a  href="research.html#pyret">Pyret</a>,
-              and an emerging gradual type system for the
-              <a  href="research.html#R">R</a> language.
-              The intention is to identify principles of gradual typing that
-              hold across the spectrum.
-            </p>
-            <p>
-              Significant open questions:
-              <ul>
-                <li>
-                  <b>Full language integration:</b> None of the existing systems
-                  cope with all the features that are found in modern programming
-                  languages (e.g. reflection, concurrency, dynamic code generation).
-                </li>
-                <li>
-                  <b>Efficient soundness:</b> Researchers have chosen different points
-                  in the space between soundness (the type system makes
-                  meaningful guarantees ahead of time) and performance
-                  (integrations of typed and untyped components may
-                  misinterpret bits and behave like C/C++).
-                  These decisions have been made on an ad-hoc basis and call
-                  for a thorough investigation.
-                </li>
-                <li>
-                   <b>Empirical evaluation:</b> The design of gradually typed
-                   languages must be informed by
-                   <a  href="http://www.cmu.edu/teaching/assessment/howto/basics/formative-summative.html">summative</a>
-                   evaluations of
-                   gradual typing's feasibility and usefulness.
-                   The former calls for studies of every single
-                   path from untyped to a typed system; the latter calls for
-                   user studies concerning productivity benefits.)
-                </li>
-              </ul>
-            </p>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <h3 class="red-back-big">Gradual Typing Across the Spectrum</h3>
-          <div class="col-md-12 card" >
-            <p>
-              <i>Gradual Typing Across the Spectrum</i> is funded by the National Science Foundation
-              (<a  href="http://www.nsf.gov/awardsearch/showAward?AWD_ID=1518844">SHF 1518844</a>).
-            </p>
-            <p>
-              <a href="people.html">Principal investigators</a> are
-              <a  href="www.ccs.neu.edu/home/matthias">Matthias Felleisen</a>, <a  href="http://janvitek.org">Jan Vitek</a>, <a  href="https://cs.brown.edu/~sk/">Shriram Krishnamurthi</a>, <a  href="http://homes.soic.indiana.edu/samth">Sam Tobin-Hochstadt</a>, <a  href="http://wphomes.soic.indiana.edu/jsiek/">Jeremy Siek</a>, and <a  href="http://www.cs.umd.edu/~jfoster">Jeffrey S. Foster</a>.
-            </p>
-            <p>
-              Participating universities are
-              <a  href="http://www.ccis.northeastern.edu/">Northeastern University</a>, <a  href="http://cs.brown.edu">Brown University</a>, <a  href="http://cs.indiana.edu">Indiana University</a>, and <a  href="http://cs.umd.edu">University of Maryland, College Park</a>.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div id="sponsors" class="col-md-12">
-  <center>
-    <h4 class="red back">
-
-    </h4>
-  </center>
-</div>
-      <!-- Footer -->
-
-<footer id="footer" class="col-md-12">
-  <div class="container text-center">
-    <hr>
-    <div class="copyright">
-      <p class="text-center">© Copyright Programming Research Laboratory 2016-2017 | made by  <a href="http://www.catchexception.cz/" target="_blank">Catchexception s.r.o.</a></p>
-    </div>
-    <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-  </div>
-</footer>
-
-<script type="text/javascript">
-  $(document).on('click', '.list', function (e) {
-  var ul = $(this).parent('li').find('ul');
-  ul.toggleClass('active');
-  var i = 1;
-  ul.children('li').each(function(){
-  $(this).delay(200*i).toggle('slow');
-  i++;
-  });
-
-  });
-
-</script>
-<script type="text/javascript">
-  function stopTopParallax()
+                                                  }
+                                                  function checkOffset() {
+                                                  if ($('#menu').offset().top + $('#menu').height() > $('#sponsors').offset().top && $('#menu').hasClass('menu-fixed'))
   {
-  var mainBanner = $('#main-banner');
-  if($('.shadow-back').offset().top >150)
-  {
-  mainBanner.css('position','fixed');
-  mainBanner.css('height','75px');
-  mainBanner.css('z-index','2');
-  $('#content').css('margin-top','260px');
-  } else {
-  mainBanner.css('position','relative');
-  mainBanner.css('height','260px');
-  mainBanner.css('z-index','0');
-  $('#content').css('margin-top','0px');
+  $('#menu').removeClass('menu-fixed');
+  $('#menu').addClass('menu-absolute');
+  $('#menu').css('top',$('#sponsors').offset().top-$('#menu').height());
   }
-  }
-  function checkOffset___() {
-  if($('#menu').offset().top + $('#menu').height()
-  >= $('#sponsors').offset().top -150)
-  {
-  var height = $('#content').height()-470;
-  $('#menu').removeClass('fixed-menu');
-  $('#menu').addClass('absolute-menu');
-  console.log();
-  $('#menu').css('bottom','-'+height+'px');
-  }
+  if ($(document).scrollTop() + window.innerHeight-100 < $('#sponsors').offset().top  && $('#menu').hasClass('menu-absolute'))
+                                                         {
+                                                         $('#menu').removeClass('menu-absolute');
+                                                         $('#menu').addClass('menu-fixed');
+                                                         $('#menu').removeAttr('style');
+                                                         }
 
-  if($(document).scrollTop() + window.innerHeight < $('#sponsors').offset().top+150)
-                                                    {
-                                                    $('#menu').removeClass('absolute-menu');
-                                                    $('#menu').addClass('fixed-menu');
-                                                    $('#menu').css('bottom','');
-                                                    }
+                                                         }
+                                                         $(document).scroll(function() {
+                                                         checkOffset();
+                                                         //stopTopParallax();
+                                                         });
+</script><script>$(document).on('click', '#menu-icon', function (e) {
+$(this).parent('div').find('ul').toggleClass('active');
+});
+$(document).on('mouseover', '#menu li', function (e) {
+$('#menu li').each(function(){
+if (!$(this).hasClass('active'))
+$(this).css('background-image','');
+});
+if (typeof $(this).data('src') !== 'undefined')
+$(this).css('background-image','url("'+$(this).data('src')+'")')
+});
+$(document).on('mouseout', '#menu li', function (e) {
+$('#menu li').each(function(){
+if (!$(this).hasClass('active'))
+$(this).css('background-image','');
+});
+});
+$(document).ready(function () {
+$('#menu li').each(function(){
+if (!$(this).hasClass('active'))
+$(this).css('background-image','');
+else if (typeof $(this).data('src') !== 'undefined')
+$(this).css('background-image','url("'+$(this).data('src')+'")')
+});
 
-                                                    }
-                                                    function checkOffset() {
-                                                    if ($('#menu').offset().top + $('#menu').height() > $('#sponsors').offset().top && $('#menu').hasClass('menu-fixed'))
-    {
-    $('#menu').removeClass('menu-fixed');
-    $('#menu').addClass('menu-absolute');
-    $('#menu').css('top',$('#sponsors').offset().top-$('#menu').height());
-    }
-    if ($(document).scrollTop() + window.innerHeight-100 < $('#sponsors').offset().top  && $('#menu').hasClass('menu-absolute'))
-                                                           {
-                                                           $('#menu').removeClass('menu-absolute');
-                                                           $('#menu').addClass('menu-fixed');
-                                                           $('#menu').removeAttr('style');
-                                                           }
-
-                                                           }
-                                                           $(document).scroll(function() {
-                                                           checkOffset();
-                                                           //stopTopParallax();
-                                                           });
-
-                                                           </script>
-
-<script>
-  $(document).on('click', '#menu-icon', function (e) {
-  $(this).parent('div').find('ul').toggleClass('active');
-  });
-  $(document).on('mouseover', '#menu li', function (e) {
-  $('#menu li').each(function(){
-  if (!$(this).hasClass('active'))
-  $(this).css('background-image','');
-  });
-  if (typeof $(this).data('src') !== 'undefined')
-  $(this).css('background-image','url("'+$(this).data('src')+'")')
-  });
-  $(document).on('mouseout', '#menu li', function (e) {
-  $('#menu li').each(function(){
-  if (!$(this).hasClass('active'))
-  $(this).css('background-image','');
-  });
-  });
-  $(document).ready(function () {
-  $('#menu li').each(function(){
-  if (!$(this).hasClass('active'))
-  $(this).css('background-image','');
-  else if (typeof $(this).data('src') !== 'undefined')
-  $(this).css('background-image','url("'+$(this).data('src')+'")')
-  });
-
-  });
-</script>
-<script>
-  $(function(){
-  $.stellar({
-  horizontalScrolling: false,
-  verticalOffset: 40
-  });
-  });
-</script>
-<script>
-  new WOW().init();
-</script>
-
-  </body>
-</html>
+});</script><script>$(function(){
+$.stellar({
+horizontalScrolling: false,
+verticalOffset: 40
+});
+});</script><script>new WOW().init();</script> </div></body></html>

@@ -40,7 +40,6 @@
   author*->string
 
   ->href
-  make-href
   string->id
 )
 
@@ -50,6 +49,8 @@
   typed/net/url
   glob/typed
 )
+(require/typed "util.rkt"
+  (make-a (-> (U String URL) String Any)))
 
 ;; =============================================================================
 ;; --- Email Addresses
@@ -88,9 +89,9 @@
                          #:href href)
   (university name (string->url href)))
 
-(: university->string (-> University String))
+(: university->string (-> University Any))
 (define (university->string uni)
-  (make-href (university-href uni) (university-name uni)))
+  (make-a (university-href uni) (university-name uni)))
 
 ;; -----------------------------------------------------------------------------
 ;; --- Types for people / students / professors
@@ -174,13 +175,13 @@
            degree*
            uni))
 
-(: person->short-name (-> Person String))
+(: person->short-name (-> Person Any))
 (define (person->short-name p)
-  (make-href (person-href p) (person-short-name p)))
+  (make-a (person-href p) (person-short-name p)))
 
-(: person->full-name (-> Person String))
+(: person->full-name (-> Person Any))
 (define (person->full-name p)
-  (make-href (person-href p) (person-full-name p)))
+  (make-a (person-href p) (person-full-name p)))
 
 ;; Person => His/Her
 (: person->adjective (-> Person String))
@@ -190,12 +191,12 @@
     [(F) "her"]
     [else "their"]))
 
-(: pi->history (-> PI (Listof String)))
+(: pi->history (-> PI (Listof Any)))
 (define (pi->history pi)
-  (append (for/list : (Listof String)
+  (append (for/list : (Listof Any)
                     ([p (in-list (pi-position* pi))])
             (P+->string p))
-          (for/list : (Listof String)
+          (for/list : (Listof Any)
                     ([d (in-list (person-degree* pi))]
                      #:when (phd? d))
             (D+->string d))))
@@ -204,13 +205,16 @@
 (define (phd? d+)
   (eq? 'phd (car d+)))
 
-(: P+->string (-> P+ String))
+(: P+->string (-> P+ Any))
 (define (P+->string pos)
-  (format "Joined ~a, ~a" (university->string (car pos)) (cadr pos)))
+  (list "Joined " (university->string (car pos)) ", " (cadr pos)))
 
-(: D+->string (-> D+ String))
+(: D+->string (-> D+ Any))
 (define (D+->string d+)
-  (format "~a, ~a, ~a" (degree->string (car d+)) (university->string (cadr d+)) (caddr d+)))
+  (add-between (list (degree->string (car d+))
+                     (university->string (cadr d+))
+                     (caddr d+))
+               ", "))
 
 (: degree->string (-> Degree String))
 (define (degree->string d)
@@ -235,15 +239,15 @@
         (printf "WARNING: found multiple images matching '~a': ~a\n" id pic*))
       (car pic*))))
 
-(: person->href (-> Person String))
+(: person->href (-> Person Any))
 (define (person->href pi)
   (define href (url->string (person-href pi)))
-  (make-href href href))
+  (make-a href href))
 
-(: person->mailto (-> Person String))
+(: person->mailto (-> Person Any))
 (define (person->mailto pi)
   (define mailto (email->string (person-mailto pi)))
-  (make-href mailto mailto))
+  (make-a mailto mailto))
 
 (: student->university-id (-> Student Symbol))
 (define (student->university-id s)
@@ -266,9 +270,9 @@
 (define (make-conference name #:year year #:href href)
   (conference name year (string->url href)))
 
-(: venue->string (-> Venue String))
+(: venue->string (-> Venue Any))
 (define (venue->string vnu)
-  (make-href (venue-href vnu) (format "~a ~a" (venue-name vnu) (venue-year vnu))))
+  (make-a (venue-href vnu) (format "~a ~a" (venue-name vnu) (venue-year vnu))))
 
 ;; -----------------------------------------------------------------------------
 ;; --- Publications
@@ -289,40 +293,40 @@
 (define (make-publication #:title title #:href href #:author author #:venue venue)
   (publication title (string->url href) (if (list? author) author (list author)) venue))
 
-(: publication->name (-> Publication String))
+(: publication->name (-> Publication Any))
 (define (publication->name pub)
-  (make-href (publication-href pub) (publication-name pub)))
+  (make-a (publication-href pub) (publication-name pub)))
 
-(: word*->string (-> (Listof String) String))
+(: word*->string (-> (Listof Any) Any))
 (define (word*->string w*)
-  (add-commas w* (lambda ([x : String]) x)))
+  (add-commas w* (lambda ([x : Any]) x)))
 
-(: author*->string (-> (Listof Person) String))
+(: author*->string (-> (Listof Person) Any))
 (define (author*->string a*)
   (add-commas a* person->full-name))
 
-(: university*->string (-> (Listof University) String))
+(: university*->string (-> (Listof University) Any))
 (define (university*->string u*)
   (add-commas u* university->string))
 
-(: add-commas (All (A) (-> (Listof A) (-> A String) String)))
+(: add-commas (All (A) (-> (Listof A) (-> A Any) Any)))
 (define (add-commas a* fmt)
   (cond
    [(null? a*)
     (raise-argument-error 'add-commas "Expected non-empty list of authors" a*)]
    [(null? (cdr a*))
-    (fmt (car a*))]
+    (list (fmt (car a*)))]
    [(null? (cddr a*))
-    (string-append (fmt (car a*))
-                   " and "
-                   (fmt (cadr a*)))]
+    (list (fmt (car a*))
+          " and "
+          (fmt (cadr a*)))]
    [else
-    (string-join ((inst add-between String String) (map fmt a*) ", " #:before-last ", and ") "")]))
+    ((inst add-between Any String) (map fmt a*) ", " #:before-last ", and ")]))
 
 ;; -----------------------------------------------------------------------------
 ;; --- Misc
 
-(: ->href (-> (U Venue Publication Person University) String))
+(: ->href (-> (U Venue Publication Person University) Any))
 (define (->href val)
   (cond
    [(venue? val)
@@ -336,11 +340,11 @@
    [else
     (raise-argument-error '->href "Cannot convert value to href" val)]))
 
-(: make-href (->* [(U URL String) String] [#:other String] String))
-(define (make-href href text #:other [other ""])
-  (define str (if (url? href) (url->string href) href))
-  (string-append
-    "<a " other " href=\"" str "\">" text "</a>"))
+;(: make-a (-> (U URL String) String Any))
+;(define (make-a href text)
+;  (define str (if (url? href) (url->string href) href))
+;  (element/not-empty 'a href: str text))
+;  ;(a 'href str text))
 
 (: string->id (-> String String))
 (define (string->id str)

@@ -292,6 +292,7 @@ h4
 }
 .project-logo {
     float:left;
+    max-width: 250px;
     padding-right: 15px;
 }
 .research p {
