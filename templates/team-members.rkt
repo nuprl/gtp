@@ -66,7 +66,7 @@
 (define david-kempe-II
   (make-student "David Kempe II"
                 #:mailto "dkempe@indiana.edu"
-                #:title "Student"
+                #:title "Alumnus"
                 #:university indiana-university
                 #:href "https://www.linkedin.com/in/david-kempe-ii-54402129"
                 #:degree* '()))
@@ -90,6 +90,60 @@
                 #:degree*
                   `((phd ,carnegie-mellon-university 2005)
                     (msc ,carnegie-mellon-university 1995))))
+
+(define earl-dean
+  (make-student "Earl Dean"
+                #:title "Alumnus"
+                #:university indiana-university
+                #:href "https://www.linkedin.com/in/earldean"
+                #:mailto anon
+                #:degree*
+                  '()))
+
+(define da
+  (make-student "Deyaaeldeen Almahallawi"
+                #:title 'phd
+                #:university indiana-university
+                #:href "http://deyaaeldeen.github.io/"
+                #:mailto anon
+                #:degree*
+                  '()))
+
+(define michael-vitousek
+  (make-student "Michael Vitousek"
+                #:title 'phd
+                #:university indiana-university
+                #:href "http://homes.soic.indiana.edu/mvitouse/"
+                #:mailto anon
+                #:degree*
+                  `()))
+
+(define caner-derici
+  (make-student "Caner Derici"
+                #:title 'phd
+                #:university indiana-university
+                #:href "http://caner.derici.me/"
+                #:mailto anon
+                #:degree*
+                  '()))
+
+(define rajan-walia
+  (make-student "Rajan Walia"
+                #:title 'phd
+                #:university indiana-university
+                #:href "http://www.soic.indiana.edu/graduate/directory/"
+                #:mailto anon
+                #:degree*
+                  '()))
+
+(define david-christiansen
+  (make-student "David Christiansen"
+                #:title 'postdoc
+                #:university indiana-university
+                #:href "http://davidchristiansen.dk/"
+                #:mailto anon
+                #:degree*
+                  `((phd ,it-copenhagen 2016))))
 
 (define matteo-cimini
   (make-student "Matteo Cimini"

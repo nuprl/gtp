@@ -68,13 +68,17 @@
     ;; -- UMD
     brianna-ren
     ;; -- IU
+    david-christiansen
     matteo-cimini
     ambrosebs
     andre-kuhlenschmidt
     andrew-kent
+    michael-vitousek
     spenser-bauman
+    caner-derici
+    rajan-walia
     zeina-migeed
-    david-kempe-II
+    da
     ;; -- Brown
     jack-wrenn
     justin-pombrio
@@ -85,6 +89,10 @@
     benjamin-chung
     ben-greenman
     alex-knauth
+
+    ;; -- alumni
+    ;david-kempe-II
+    ;earl-dean
   ]
   @;@div[class: "col-md-12 devider"]))
   @div[class: "col-md-12"]{@p{}}
