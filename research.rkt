@@ -177,6 +177,17 @@
         @a[href: "http://www.ccs.neu.edu/home/samth/pycket-draft.pdf"]{significantly reduce} the performance overhead of
         sound gradual typing.
       }]
+    @project[
+      #:name "Typed Clojure"
+      #:href "http://typedclojure.org"
+      @p{
+        Typed Clojure is an optional type system for 
+        @a[href: "http://clojure.org/"]{Clojure}. It understands
+        common idioms used by Clojure programmers like multimethods, local
+        control flow, Java interoperability, and heterogeneous maps.
+        It is a 
+        @a[href: "http://frenchy64.github.io/papers/esop16-short.pdf"]{practical system} used in industry and open source.
+      }]
     @;@project[
     @;  #:name "R"
     @;  #:href "http://janvitek.org"
