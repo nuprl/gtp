@@ -70,15 +70,15 @@
     ;; -- IU
     david-christiansen
     matteo-cimini
+    da
+    spenser-bauman
     ambrosebs
+    caner-derici
     andre-kuhlenschmidt
     andrew-kent
     michael-vitousek
-    spenser-bauman
-    caner-derici
     rajan-walia
     zeina-migeed
-    da
     ;; -- Brown
     jack-wrenn
     justin-pombrio
