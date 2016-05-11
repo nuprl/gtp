@@ -47,6 +47,7 @@
         @a[href: "research.html#diamondback-ruby"]{Diamondback Ruby},
         @a[href: "research.html#racket"]{Typed Racket},
         @a[href: "research.html#pyret"]{Pyret},
+        @a[href: "research.html#typed-clojure"]{Typed Clojure},
         and an emerging gradual type system for the
         R language.
         The intention is to identify principles of gradual typing that
