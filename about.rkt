@@ -57,7 +57,7 @@
           @li{
             @b{Full language integration:} None of the existing systems
             cope with all the features that are found in modern programming
-            languages (e.g. reflection, concurrency, dynamic code generation).
+            languages (e.g. reflection, dynamic code generation).
           }@li{
             @b{Efficient soundness:} Researchers have chosen different points
             in the space between soundness (the type system makes
