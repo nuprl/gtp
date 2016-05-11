@@ -16,8 +16,7 @@
 
   (all-from-out "templates/datatypes.rkt")
   (all-from-out "templates/universities.rkt")
-  (all-from-out "templates/principal-investigators.rkt")
-  (all-from-out "templates/team-members.rkt")
+  (all-from-out "templates/people.rkt")
   (all-from-out "templates/venues.rkt")
 ]
 
@@ -26,9 +25,8 @@
   web-server/templates
   racket/string
   "templates/datatypes.rkt"
-  "templates/misc.rkt"
-  "templates/principal-investigators.rkt"
-  "templates/team-members.rkt"
+  "templates/misc-scripts.rkt"
+  "templates/people.rkt"
   "templates/universities.rkt"
   "templates/venues.rkt"
 ]
@@ -39,7 +37,7 @@
 @(define AWARD-HREF "http://www.nsf.gov/awardsearch/showAward?AWD_ID=1518844")
 @(define AWARD-NUMBER "SHF 1518844")
 @(define BODY-ID "top")
-@(define PAGE-TITLE* '("Home" "About" "Research" "People" "Team"))
+@(define PAGE-TITLE* '("Home" "About" "Research" "People" "Contact"))
 @(define --- @literal{&mdash;})
 
 @; -----------------------------------------------------------------------------

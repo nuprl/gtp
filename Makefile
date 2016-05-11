@@ -1,4 +1,4 @@
-TARGETS=about.html index.html people.html research.html team.html
+TARGETS=about.html contact.html index.html people.html research.html
 
 all: setup $(TARGETS)
 

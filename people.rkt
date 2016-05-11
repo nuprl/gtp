@@ -4,6 +4,7 @@
 
 @(define (principal-investigators . index->pi*)
    (list
+     @h3[class: "red-back-big"]{Principal Investigators}
      (for/list ([index->pi (in-list index->pi*)]
                 [i (in-naturals)])
        (index->pi i))
@@ -25,7 +26,7 @@
      @div[class: (string-append "col-md-3 info-1 " (if pic-on-left? "" " col-md-offset-1"))]{
        @list[@person-title[pi] @br[] @person->href[pi]]})
    @div[class: "col-md-12"]{
-     @h3[class: "red-back-big"]{
+     @h3[class: "gray-back"]{
        @person-short-name[pi]}
      @(if pic-on-left?
        @(list
@@ -40,6 +41,41 @@
            @|position-elem|
            @|bio-elem|}
          @|image-elem|))})
+
+@(define (team-members . tm*)
+   @div[class: "col-md-12"]{
+     @h3[class: "red-back-big"]{Team Members}
+     @(for/list ([u+s* (in-list (group-by-university tm*))])
+        (student*->string (reverse (cdr u+s*))))})
+
+@(define (student*->string s*)
+   (define u (student-university (car s*)))
+   @div[class: "col-md-12"]{
+     @h3[class: "gray-back"]{
+       @university-name[u]}
+     @(map student->string s*)})
+
+@(define (student->string s)
+   @div[class: "col-md-6"]{
+     @div[class: "col-md-4"]{
+       @img[class: "img-responsive student-icon"
+            src: (person->image s)]}
+     @div[class: "col-md-8 info-1"]{
+       @(add-between
+         (list (person-short-name s)
+               (person-title s)
+               (person->href s))
+         @br[])}})
+
+@(define (group-by-university tm*)
+   (define H (make-hasheq))
+   (for ([tm (in-list tm*)])
+     (define uni (student->university-id tm))
+     (hash-set! H uni (cons tm (hash-ref H uni (lambda () '())))))
+   (sort (hash->list H) symbol<? #:key car))
+
+@(define (alumni . p*)
+   'TODO)
 
 @; =============================================================================
 
@@ -106,4 +142,49 @@
       I tried to understand JavaScript by dynamic analysis and am
       now looking at supporting scalable data analysis in R.
     }
-]}
+  ]
+
+  @div[class: "col-md-12 devider"]
+
+  @; ===========================================================================
+  @; 2016-05-10: Sorting members manually, for now
+  @team-members[
+    ;; -- UMD
+    brianna-ren
+    ;; -- IU
+    david-christiansen
+    matteo-cimini
+    da
+    spenser-bauman
+    ambrosebs
+    caner-derici
+    andre-kuhlenschmidt
+    andrew-kent
+    michael-vitousek
+    rajan-walia
+    zeina-migeed
+    ;; -- Brown
+    jack-wrenn
+    justin-pombrio
+    matthew-kolosick
+    ;; -- NEU
+    stephen-chang
+    asumu-takikawa
+    benjamin-chung
+    ben-greenman
+    alex-knauth
+
+    ;; -- alumni
+    ;david-kempe-II
+    ;earl-dean
+  ]
+
+  @div[class: "col-md-12 devider"]
+
+  @; @alumni[
+  @;   david-kempe-II
+  @;   earl-dean
+  @; ]
+
+  @; @div[class: "col-md-12 devider"]
+}
