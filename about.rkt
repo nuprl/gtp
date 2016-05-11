@@ -82,16 +82,16 @@
       @p{
         @i[PROJECT-NAME] is funded by the National Science Foundation
         (@a[href: AWARD-HREF AWARD-NUMBER]).
-      }@p[
-        "Principal investigators are"
+      }@p{
+        Principal investigators are
         @author*->string[(list
            matthias
            jan-vitek
            sk
            samth
            siek
-           jfoster)] "."
-      ]@p{
+           jfoster)].
+      }@p{
         Participating universities are
         @university*->string[(list
           northeastern-university
