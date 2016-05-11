@@ -160,7 +160,7 @@
 (define zeina-migeed
   (make-student "Zeina Migeed"
                 #:title "Student"
-                #:university northeastern-university
+                #:university indiana-university
                 #:mailto "abdelmigeed.z@husky.neu.edu"
                 #:href "http://github.com/migeed-z"
                 #:degree* '()))

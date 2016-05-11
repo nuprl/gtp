@@ -73,6 +73,7 @@
     andre-kuhlenschmidt
     andrew-kent
     spenser-bauman
+    zeina-migeed
     david-kempe-II
     ;; -- Brown
     jack-wrenn
@@ -80,10 +81,10 @@
     matthew-kolosick
     ;; -- NEU
     stephen-chang
+    asumu-takikawa
     benjamin-chung
     ben-greenman
     alex-knauth
-    zeina-migeed
   ]
   @;@div[class: "col-md-12 devider"]))
   @div[class: "col-md-12"]{@p{}}
