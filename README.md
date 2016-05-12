@@ -2,8 +2,10 @@ gtp.github.io
 ===
 
 Website for [Gradual Typing Across the Spectrum](http://www.nsf.gov/awardsearch/showAward?AWD_ID=1518844).
-Built using [Racket](https://racket-lang.org/) (especially [`#lang scribble/html`](http://docs.racket-lang.org/scribble-pp/html.html))
-Designed by [Catchexception s.r.o.](http://www.catchexception.cz/)
+
+Built using [Racket](https://racket-lang.org/) (especially [`#lang scribble/html`](http://docs.racket-lang.org/scribble-pp/html.html)).
+
+Designed by [Catchexception s.r.o.](http://www.catchexception.cz/).
 
 - The `*.html` files are generated from the matching `*.rkt` files
 - Run `make` to rebuild the site; `make clean` to destroy it
