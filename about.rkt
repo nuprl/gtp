@@ -26,7 +26,7 @@
         @a[href: "https://blog.twitter.com/2011/twitter-search-is-now-3x-faster"]{companie}s
         such as @a[href: "http://www.zdnet.com/article/why-facebook-hasnt-ditched-php"]{Facebook},
         and @a[href: "http://erlang.org/faq/introduction.html#idp3203003201"]{more}.
-        Among many reasons, developers @a[href: "http://www.artima.com/scalazine/articles/twitter_on_scala.html"]{"cite"}
+        Among many reasons, developers @a[href: "http://www.artima.com/scalazine/articles/twitter_on_scala.html"]{cite}
         the flexibility of untyped languages as they allow the rapid
         construction of robust and useful prototypes.
         When it comes to software maintenance, however, untyped languages

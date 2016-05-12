@@ -156,7 +156,7 @@
         }@li{
           Pyret makes testing a natural part of the programming
           process.
-          Functions can end in a <tt>where:</tt> clause that
+          Functions can end in a @tt{where:} clause that
           holds unit tests for the function.
           These assertions are checked dynamically.
         }@li{

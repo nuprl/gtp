@@ -12,7 +12,7 @@
     (jeremy-siek siek)
 
     (ambrose-bonnaire-sergeant ambrosebs)
-    (deyaaeldeenalmahallawi da)))
+    (deyaaeldeen-almahallawi da)))
 
 (require "datatypes.rkt" "universities.rkt")
 
@@ -181,7 +181,7 @@
                 #:degree*
                   '()))
 
-(define deyaaeldeenalmahallawi
+(define deyaaeldeen-almahallawi
   (make-student "Deyaaeldeen Almahallawi"
                 #:title 'phd
                 #:university indiana-university
