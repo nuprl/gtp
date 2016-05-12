@@ -39,11 +39,11 @@
    @div[class: "col-md-12 card" e])
 
 @(define (pi-meeting #:location location #:date [date #f] #:schedule [schedule #f])
-  (list
+  (list*
     "Upcoming PI meeting at "
     (->href location)
     (if date (string-append ", " date ".") ".")
-    (if schedule @a[href: schedule " [Schedule]"] "")))
+    (if schedule (list " " @a[href: schedule "[Schedule]"]) '())))
 
 @; =============================================================================
 
