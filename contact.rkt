@@ -45,8 +45,8 @@
     @faq[
       @;@qa["For the latest news on Racket"]{@p{
       @;  Sign up for the Racket @a[href: "https://lists.racket-lang.org/"]{mailing lists}}}
-      @qa["For questions or comments about this website"]{@p{
-        Email @tt{benjaminlgreenman} at @tt{gmail.com}.}}
+      @qa["For questions or comments about this website"]{
+        @p{Email @tt{benjaminlgreenman} at @tt{gmail.com}.}}
     ]
   }
 }
