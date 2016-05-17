@@ -151,6 +151,7 @@
   @team-members[
     ;; -- UMD
     brianna-ren
+
     ;; -- IU
     david-christiansen
     matteo-cimini
@@ -163,11 +164,14 @@
     michael-vitousek
     rajan-walia
     zeina-migeed
+
     ;; -- Brown
     joe-gibbs-politz
     jack-wrenn
     justin-pombrio
     matthew-kolosick
+    philip-blair
+
     ;; -- NEU
     stephen-chang
     asumu-takikawa

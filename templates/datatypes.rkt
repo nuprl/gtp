@@ -97,12 +97,16 @@
 ;; --- Types for people / students / professors
 
 (define-type Year Natural)
-(define-type Degree (U 'phd 'me 'bse 'diplom 'ms 'msc 'postdoc 'bs 'bsc))
+(define-type Degree (U 'reu 'phd 'me 'bse 'diplom 'ms 'msc 'postdoc 'bs 'bsc))
 (define-type D+ (List Degree University Year))
 (define-type Degree* (Listof D+))
 (define-type Email email)
 (define-type P+ (List University Year))
 (define-type Position* (Listof P+))
+
+(: add-student? (-> Degree Boolean))
+(define (add-student? x)
+  (and (memq x '(phd me bse ms msc bs bsc)) #t))
 
 (: degree-year (-> (List Degree University Year) Year))
 (define (degree-year d)
@@ -168,8 +172,8 @@
            gender
            (cond
             [(string? title) title]
-            [(eq? 'postdoc title) (degree->string title)]
-            [else (string-append (degree->string title) " Student")])
+            [else
+             (string-append (degree->string title) (if (add-student? title) " Student" ""))])
            (string->email mailto)
            (string->url href)
            degree*
@@ -226,6 +230,7 @@
    [(postdoc) "Post-doc"]
    [(bs) "B.S."]
    [(bsc) "B.Sc."]
+   [(reu) "REU"]
    [else (raise-argument-error 'degree->string "Unknown degree" d)]))
 
 (: person->image (-> Person String))

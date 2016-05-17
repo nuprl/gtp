@@ -286,7 +286,7 @@
 
 (define alex-knauth
   (make-student "Alex Knauth"
-                #:title "Student"
+                #:title 'reu
                 #:mailto "alexander@knauth.org"
                 #:university northeastern-university
                 #:href "https://github.com/AlexKnauth"
@@ -294,7 +294,7 @@
 
 (define zeina-migeed
   (make-student "Zeina Migeed"
-                #:title "Student"
+                #:title 'reu
                 #:university indiana-university
                 #:mailto "abdelmigeed.z@husky.neu.edu"
                 #:href "http://github.com/migeed-z"
@@ -308,6 +308,14 @@
                 #:href "http://justinpombrio.net/"
                 #:degree* `((bs ,wpi 2011))))
 
+(define philip-blair
+  (make-student "Philip Blair"
+                #:title 'reu
+                #:university brown-university
+                #:mailto "sud0@ccs.neu.edu"
+                #:href "https://www.linkedin.com/in/blairphilip"
+                #:degree* '()))
+
 (define jack-wrenn
   (make-student "Jack Wrenn"
                 #:title 'phd
@@ -319,7 +327,7 @@
 (define matthew-kolosick
   (make-student "Matthew Kolosick"
                 #:mailto "kolosick@ccs.neu.edu"
-                #:title "Student"
+                #:title 'reu
                 #:university brown-university
                 #:href "https://github.com/mkolosick"
                 #:degree* '()))
