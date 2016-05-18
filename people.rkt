@@ -3,12 +3,12 @@
 
 
 @(define (principal-investigators . index->pi*)
-   (list
+   @with-devider[(list
      @h3[class: "red-back-big"]{Principal Investigators}
      (for/list ([index->pi (in-list index->pi*)]
                 [i (in-naturals)])
        (index->pi i))
-     @div[class: "col-md-12 devider"]))
+     @div[class: "col-md-12 devider"])])
 
 @(define ((pi->string pi . bio*) n)
    (define pic-on-left? (even? n))
@@ -42,11 +42,16 @@
            @|bio-elem|}
          @|image-elem|))})
 
-@(define (team-members . tm*)
+@(define (red-back elem*)
    @div[class: "col-md-12"]{
      @h3[class: "red-back-big"]{Team Members}
+     @|elem*|})
+
+@(define (team-members . tm*)
+  @with-devider[
+   @red-back[
      @(for/list ([u+s* (in-list (group-by-university tm*))])
-        (student*->string (reverse (cdr u+s*))))})
+        (student*->string (reverse (cdr u+s*))))]])
 
 @(define (student*->string s*)
    (define u (student-university (car s*)))
@@ -55,7 +60,7 @@
        @university-name[u]}
      @(map student->string s*)})
 
-@(define (student->string s)
+@(define (student->string s #:alumnus? [alum? #f])
    @div[class: "col-md-6"]{
      @div[class: "col-md-4"]{
        @img[class: "img-responsive student-icon"
@@ -63,7 +68,7 @@
      @div[class: "col-md-8 info-1"]{
        @(add-between
          (list (person-short-name s)
-               (person-title s)
+               (if alum? (alma-mater s) (person-title s))
                (person->href s))
          @br[])}})
 
@@ -75,7 +80,13 @@
    (sort (hash->list H) symbol<? #:key car))
 
 @(define (alumni . p*)
-   'TODO)
+  @with-devider[
+   @red-back[
+     @(for/list ([p (in-list p*)])
+       (student->string p #:alumnus? #t))]])
+
+@(define (with-devider elem)
+  @(cons @|elem| @div[class: "col-md-12 devider"]))
 
 @; =============================================================================
 
@@ -144,8 +155,6 @@
     }
   ]
 
-  @div[class: "col-md-12 devider"]
-
   @; ===========================================================================
   @; 2016-05-10: Sorting members manually, for now
   @team-members[
@@ -166,7 +175,6 @@
     zeina-migeed
 
     ;; -- Brown
-    joe-gibbs-politz
     jack-wrenn
     justin-pombrio
     matthew-kolosick
@@ -174,22 +182,18 @@
 
     ;; -- NEU
     stephen-chang
-    asumu-takikawa
     benjamin-chung
     ben-greenman
     alex-knauth
 
-    ;; -- alumni
-    ;david-kempe-II
-    ;earl-dean
   ]
 
-  @div[class: "col-md-12 devider"]
-
-  @; @alumni[
-  @;   david-kempe-II
-  @;   earl-dean
-  @; ]
+  @alumni[
+    asumu-takikawa
+    david-kempe-II
+    earl-dean
+    joe-gibbs-politz
+  ]
 
   @; @div[class: "col-md-12 devider"]
 }

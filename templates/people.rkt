@@ -151,7 +151,8 @@
                 #:title "Alumnus"
                 #:university indiana-university
                 #:href "https://www.linkedin.com/in/david-kempe-ii-54402129"
-                #:degree* '()))
+                #:degree*
+                  `((msc ,indiana-university 2016))))
 
 (define ambrose-bonnaire-sergeant
   (make-student "Ambrose Bonnaire-Sergeant"
@@ -179,7 +180,7 @@
                 #:href "https://www.linkedin.com/in/earldean"
                 #:mailto anon
                 #:degree*
-                  '()))
+                  `((msc ,indiana-university 2016))))
 
 (define deyaaeldeen-almahallawi
   (make-student "Deyaaeldeen Almahallawi"

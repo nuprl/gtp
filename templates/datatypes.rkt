@@ -20,6 +20,7 @@
   pi->history
   student-university
   student->university-id
+  alma-mater
 
   make-student
   make-pi
@@ -204,6 +205,13 @@
                     ([d (in-list (person-degree* pi))]
                      #:when (phd? d))
             (D+->string d))))
+
+(: alma-mater (-> Person Any))
+(define (alma-mater p)
+  (define d* (person-degree* p))
+  (if (null? d*)
+    "Former Student"
+    (D+->string (car d*))))
 
 (: phd? (-> D+ Boolean))
 (define (phd? d+)
