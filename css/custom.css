@@ -106,7 +106,7 @@ body {
     height:100%;
 }
 .body-content {
-    background-color: rgba(246,246,246,0.95);
+    background-color: rgba(246,246,246, 0.99);
     position: absolute;
     min-height: 651px;
     width: 100%;
