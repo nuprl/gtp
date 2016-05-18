@@ -1,5 +1,5 @@
 #main-banner {
-    background-image: url('../images/main-banner.png');
+    background-image: url('../images/main-banner.jpg');
     width:100%;
     height: 260px;
     background-attachment: fixed;
@@ -98,7 +98,7 @@ body {
     font-size: 24px;
 }
 .body {
-    background-image: url('../images/main-banner.png');
+    background-image: url('../images/main-banner.jpg');
     background-position: center -800px;
     background-size: cover;
     position:fixed;
