@@ -40,11 +40,13 @@
 
 @(define (pi-meeting #:location location #:date [date #f] #:schedule [schedule #f])
   (list*
-    "Upcoming PI meeting at "
+    "PI meeting at "
     (->href location)
     (if date (string-append ", " date ".") ".")
     (if schedule (list " " @a[href: schedule "[Schedule]"]) '())))
 
+@(define (upcoming rest)
+  (cons "Upcoming " rest))
 @; =============================================================================
 
 @page[0]{
@@ -96,9 +98,9 @@
     ]
 
     @news-and-events[
-      @pi-meeting[
+      @upcoming[@pi-meeting[
         #:location ecoop-2016
-      ]
+      ]]
       @pi-meeting[
         #:date "2016-05-17"
         #:location northeastern-university
