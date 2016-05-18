@@ -21,6 +21,8 @@
 ]
 
 @require[
+  (only-in glob glob)
+  (only-in racket/date current-date)
   scribble/html
   web-server/templates
   racket/string
@@ -42,6 +44,10 @@
 
 @; -----------------------------------------------------------------------------
 
+@(define current-logo-number
+  (let ([num-logos (length (glob "images/logo/*.ico"))])
+    (lambda ()
+      (modulo (date-hour (current-date)) num-logos))))
 
 @(define (header)
   @head{
@@ -58,7 +64,7 @@
     @link[href: "http://fonts.googleapis.com/css?family=PT+Sans"
           rel: "stylesheet"
           type: "text/css"]
-    @favicons["16x16" "32x32" "96x96"]
+    @favicons["16x16"] @; "32x32" "96x96"]
     @script[src: "js/wow.min.js"]
     @scripts["jquery.min" "bootstrap.min" "custom" "stellar"]})
 
@@ -68,7 +74,10 @@
 
 @(define (favicons . size*)
   (for/list ([size (in-list size*)])
-    @link[rel: "icon" size: size href: (format "images/favicon-~a.png" size)]))
+    @link[rel: "shortcut icon"
+          type: "image/x-icon"
+          size: size
+          href: (format "images/logo/gtp-~a.ico" (current-logo-number))]))
 
 @(define (scripts . src*)
   (for/list ([src (in-list src*)])
@@ -120,14 +129,14 @@
   (list
     @doctype{html}
     @html[lang: "en"]{
-      @div[class: "body" data-stellar-background-ratio: "1.5"]
       @header[]
+      @div[class: "body" data-stellar-background-ratio: "1.5"]
       @div[class: "main-header-container"]{
         @div[class: "shadow-back"]{
           @div[class: "main-logo"]{
             @img[class: "img-responsive pull-left"
                  alt: ""
-                 src: "images/prl.png"]}
+                 src: (format "images/logo/gtp-~a.png" (current-logo-number))]}
           @div[class: "main-header"]{
             @h1[PROJECT-NAME]}}}
       @body[id: BODY-ID]{

@@ -49,7 +49,7 @@
 .shadow-back {
     width:100%;
     height: 75px;
-    background-color:rgba(0,0,0,.75);
+    background-color:rgba(0,0,0,.85);
     position: relative;
 }
 .menu-fixed {
