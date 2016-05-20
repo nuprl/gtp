@@ -55,7 +55,7 @@
       @h2[class: "main-h2"]{
         We are a @b{coalition} of researchers seeking to discover the
         @b{unifying principles} underlying the design of gradual type
-        systems through reproducability studies, @b{implementations} of
+        systems through reproducibility studies, @b{implementations} of
         type systems and tools, plus @b{evaluations} covering both the
         @b{feasibility} of gradual typing as well as its @b{long-term value}
         to software engineers.
