@@ -42,9 +42,9 @@
            @|bio-elem|}
          @|image-elem|))})
 
-@(define (red-back elem*)
+@(define (red-back elem* #:title [title "Team Members"])
    @div[class: "col-md-12"]{
-     @h3[class: "red-back-big"]{Team Members}
+     @h3[class: "red-back-big"]{@|title|}
      @|elem*|})
 
 @(define (team-members . tm*)
@@ -81,7 +81,7 @@
 
 @(define (alumni . p*)
   @with-devider[
-   @red-back[
+   @red-back[#:title "Alumni"
      @(for/list ([p (in-list p*)])
        (student->string p #:alumnus? #t))]])
 
