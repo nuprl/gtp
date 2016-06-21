@@ -3,12 +3,13 @@
 
 
 @(define (principal-investigators . index->pi*)
-   @with-devider[(list
-     @h3[class: "red-back-big"]{Principal Investigators}
-     (for/list ([index->pi (in-list index->pi*)]
-                [i (in-naturals)])
-       (index->pi i))
-     @div[class: "col-md-12 devider"])])
+   @with-devider{
+     @red-back[#:title "Principal Investigators"
+       @(list
+         (for/list ([index->pi (in-list index->pi*)]
+                    [i (in-naturals)])
+           (index->pi i))
+         @div[class: "col-md-12 devider"])]})
 
 @(define ((pi->string pi . bio*) n)
    (define pic-on-left? (even? n))
@@ -42,14 +43,14 @@
            @|bio-elem|}
          @|image-elem|))})
 
-@(define (red-back elem* #:title [title "Team Members"])
+@(define (red-back elem* #:title title)
    @div[class: "col-md-12"]{
      @h3[class: "red-back-big"]{@|title|}
      @|elem*|})
 
 @(define (team-members . tm*)
   @with-devider[
-   @red-back[
+   @red-back[#:title "Team Members"
      @(for/list ([u+s* (in-list (group-by-university tm*))])
         (student*->string (reverse (cdr u+s*))))]])
 
