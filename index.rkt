@@ -63,13 +63,13 @@
   @div[class: "row"]{
     @; TODO these need dates
     @research-highlights[
-      @to-appear[@publication[
+      @appeared[@publication[
         #:title "Just-in-Time Static Type Checking for Dynamic Languages"
         #:author (list brianna-ren jfoster)
         #:href "http://www.cs.umd.edu/~jfoster/papers/pldi16.pdf"
         #:venue pldi-2016
       ]]
-      @to-appear[@publication[
+      @appeared[@publication[
         #:title "Occurrence Typing Modulo Theories"
         #:author (list andrew-kent david-kempe-II samth)
         #:href "http://conf.researchr.org/event/pldi-2016/pldi-2016-papers-occurrence-typing-modulo-theories"
