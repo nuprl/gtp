@@ -18,3 +18,6 @@
 (define ecoop-2016
   (make-conference "ECOOP" #:year 2016 #:href "http://2016.ecoop.org"))
 
+(define stop-2016
+  (make-conference "STOP" #:year 2016 #:href "http://2016.ecoop.org/track/STOP-2016"))
+

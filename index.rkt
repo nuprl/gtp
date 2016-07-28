@@ -29,6 +29,9 @@
 @(define (to-appear p)
    (format-publication p "to appear at"))
 
+@(define (spoke-at p* v)
+  (list (author*->string p*) " spoke at " (venue->string v)))
+
 @(define (news-and-events . e*)
    @div[class: "col-md-4"]{
      @h3[class: "red-back"]{News and Events}
@@ -47,6 +50,7 @@
 
 @(define (upcoming rest)
   (cons "Upcoming " rest))
+
 @; =============================================================================
 
 @page[0]{
@@ -63,6 +67,7 @@
   @div[class: "row"]{
     @; TODO these need dates
     @research-highlights[
+      @spoke-at[(list jfoster jan andre-kuhlenschmidt michael-vitousek) stop-2016]
       @appeared[@publication[
         #:title "Just-in-Time Static Type Checking for Dynamic Languages"
         #:author (list brianna-ren jfoster)
@@ -98,9 +103,6 @@
     ]
 
     @news-and-events[
-      @upcoming[@pi-meeting[
-        #:location ecoop-2016
-      ]]
       @pi-meeting[
         #:date "2016-05-17"
         #:location northeastern-university
