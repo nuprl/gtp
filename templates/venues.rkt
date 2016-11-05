@@ -6,6 +6,9 @@
 
 ;; =============================================================================
 
+(define popl-2017
+  (make-conference "POPL" #:year 2017 #:href "http://conf.researchr.org/home/POPL-2017"))
+
 (define pldi-2016
   (make-conference "PLDI" #:year 2016 #:href "http://conf.researchr.org/home/pldi-2016"))
 

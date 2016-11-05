@@ -200,6 +200,15 @@
                 #:degree*
                   `()))
 
+(define cameron-swords
+  (make-student "Cameron Swords"
+                #:title 'phd
+                #:university indiana-university
+                #:href "http://cswords.com/"
+                #:mailto "cameronswords@gmail.com"
+                #:degree*
+                  `()))
+
 (define caner-derici
   (make-student "Caner Derici"
                 #:title 'phd

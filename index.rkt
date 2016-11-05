@@ -65,8 +65,25 @@
         to software engineers.
   }}}
   @div[class: "row"]{
-    @; TODO these need dates
     @research-highlights[
+      @to-appear[@publication[
+        #:title "Automatically Generating the Dynamic Semantics of Gradually Typed Languages"
+        #:author (list matteo-cimini jeremy-siek)
+        #:href "http://popl17.sigplan.org/event/popl-2017-papers-automatically-generating-the-dynamic-semantics-of-gradually-typed-languages"
+        #:venue popl-2017
+      ]]
+      @to-appear[@publication[
+        #:title "Big Types in Little Runtime"
+        #:author (list michael-vitousek cameron-swords jeremy-siek)
+        #:href "http://popl17.sigplan.org/event/popl-2017-papers-big-types-in-little-runtime"
+        #:venue popl-2017
+      ]]
+      @to-appear[@publication[
+        #:title "Type Systems as Macros"
+        #:author (list stephen-chang alex-knauth ben-greenman)
+        #:href "http://www.ccs.neu.edu/home/stchang/popl2017/index.html"
+        #:venue popl-2017
+      ]]
       @spoke-at[(list jfoster jan andre-kuhlenschmidt michael-vitousek) stop-2016]
       @appeared[@publication[
         #:title "Just-in-Time Static Type Checking for Dynamic Languages"
