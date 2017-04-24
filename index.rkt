@@ -121,6 +121,10 @@
 
     @news-and-events[
       @pi-meeting[
+        #:date "2017-08-07"
+        #:location northeastern-university
+      ]
+      @pi-meeting[
         #:date "2016-05-17"
         #:location northeastern-university
         #:schedule "pi2016/pi2016.html"
