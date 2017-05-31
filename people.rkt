@@ -173,7 +173,6 @@
     andrew-kent
     michael-vitousek
     rajan-walia
-    zeina-migeed
 
     ;; -- Brown
     jack-wrenn
@@ -194,6 +193,7 @@
     david-kempe-II
     earl-dean
     joe-gibbs-politz
+    zeina-migeed
   ]
 
   @; @div[class: "col-md-12 devider"]

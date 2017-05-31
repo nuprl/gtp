@@ -308,7 +308,7 @@
                 #:university indiana-university
                 #:mailto "abdelmigeed.z@husky.neu.edu"
                 #:href "http://github.com/migeed-z"
-                #:degree* '()))
+                #:degree* `((bs ,northeastern-university 2017))))
 
 (define justin-pombrio
   (make-student "Justin Pombrio"
