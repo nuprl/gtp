@@ -167,7 +167,7 @@
     )]
     @project[
       #:name "Pycket"
-      #:href "http://www.github.com/samth/pycket"
+      #:href "http://www.github.com/pycket/pycket"
       @p{
         Pycket is a high-performance tracing JIT compiler for Racket.
         Pycket supports a wide variety of the sophisticated features
