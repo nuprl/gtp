@@ -100,10 +100,9 @@
         @hr{}
         @div[class: "copyright"]{
           @p[class: "text-center"]{
-            @literal{©} Copyright Programming Research Laboratory 2016-2017 | made by
-            @a[href: "http://www.catchexception.cz/"
-               target: "_blank"]{
-              Catchexception s.r.o.}}}
+            @literal{©} Copyright Programming Research Laboratory 2016-2017
+            | made by @a[href: "http://www.catchexception.cz/" target: "_blank"]{ Catchexception s.r.o.}
+            | source on @a[href: "https://github.com/nuprl/gtp"]{GitHub}}}
         @a[href: (string-append "#" BODY-ID)
            title: "To Top"]{
           @span[class: "glyphicon glyphicon-chevron-up"]}}})
