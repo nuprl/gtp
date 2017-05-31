@@ -48,10 +48,13 @@
   (only-in racket/list add-between)
   racket/string
   typed/net/url
-  glob/typed
+  typed/file/glob
 )
 (require/typed "util.rkt"
   (make-a (-> (U String URL) String Any)))
+
+(require/typed racket/path
+  (find-relative-path (-> Path-String Path-String Path)))
 
 ;; =============================================================================
 ;; --- Email Addresses
@@ -250,7 +253,7 @@
     (begin
       (unless (null? (cdr pic*))
         (printf "WARNING: found multiple images matching '~a': ~a\n" id pic*))
-      (car pic*))))
+      (path->string (find-relative-path (current-directory) (car pic*))))))
 
 (: person->href (-> Person Any))
 (define (person->href pi)

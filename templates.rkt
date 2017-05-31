@@ -21,7 +21,7 @@
 ]
 
 @require[
-  (only-in glob glob)
+  (only-in file/glob glob)
   (only-in racket/date current-date)
   scribble/html
   web-server/templates

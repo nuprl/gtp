@@ -3,7 +3,7 @@ TARGETS=about.html contact.html index.html people.html research.html
 all: setup $(TARGETS)
 
 setup:
-	raco pkg install --auto --skip-installed glob rackunit-abbrevs
+	raco pkg install --auto --skip-installed rackunit-abbrevs
 
 %.html: %.rkt
 	raco make -v $<
