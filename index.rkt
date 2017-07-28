@@ -123,6 +123,7 @@
       @pi-meeting[
         #:date "2017-08-07"
         #:location northeastern-university
+        #:schedule "pi2017/pi2017.html"
       ]
       @pi-meeting[
         #:date "2016-05-17"
