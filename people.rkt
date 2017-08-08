@@ -160,31 +160,35 @@
   @; 2016-05-10: Sorting members manually, for now
   @team-members[
     ;; -- UMD
+    niki-vazou
     brianna-ren
+    milod-kazerounian
 
     ;; -- IU
     david-christiansen
     matteo-cimini
     da
-    spenser-bauman
     ambrosebs
     caner-derici
     andre-kuhlenschmidt
-    andrew-kent
     michael-vitousek
+    sarah-spall
     rajan-walia
+    andrew-kent
+    di-zhong
 
     ;; -- Brown
     jack-wrenn
     justin-pombrio
-    matthew-kolosick
-    philip-blair
+    preston-tunnell-wilson
+    sorawee-porncharoenwase
 
     ;; -- NEU
     stephen-chang
     benjamin-chung
     ben-greenman
     alex-knauth
+    milo-turner
 
   ]
 
@@ -193,6 +197,9 @@
     david-kempe-II
     earl-dean
     joe-gibbs-politz
+    matthew-kolosick
+    philip-blair
+    spenser-bauman
     zeina-migeed
   ]
 

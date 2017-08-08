@@ -92,15 +92,6 @@
 
 (define anon "a@a.a")
 
-(define brianna-ren
-  (make-student "Brianna Ren"
-                #:title 'phd
-                #:university university-of-maryland
-                #:mailto "bren@cs.umd.edu"
-                #:href "https://www.cs.umd.edu/~bren"
-                #:degree* `()
-                #:gender 'F))
-
 (define asumu-takikawa
   (make-student "Asumu Takikawa"
                 #:mailto "asumu@ccs.neu.edu"
@@ -341,6 +332,73 @@
                 #:university brown-university
                 #:href "https://github.com/mkolosick"
                 #:degree* '()))
+
+(define sarah-spall
+  (make-student "Sarah Spall"
+                #:title 'phd
+                #:mailto anon
+                #:university indiana-university
+                #:href "https://github.com/spall"
+                #:degree* '()))
+
+(define di-zhong
+  (make-student "Di Zhong"
+                #:title 'reu
+                #:mailto anon
+                #:href "https://www.google.com"
+                #:university indiana-university
+                #:degree* '()))
+
+(define preston-tunnell-wilson
+  (make-student "Preston Tunnell Wilson"
+                #:title 'phd
+                #:mailto anon
+                #:university brown-university
+                #:href "https://cs.brown.edu/~ptunnell/"
+                #:degree* '()))
+
+(define sorawee-porncharoenwase
+  (make-student "Sorawee Porncharoenwase"
+                #:title 'reu
+                #:mailto anon
+                #:university brown-university
+                #:href "https://github.com/sorawee/"
+                #:degree* '()))
+
+(define milo-turner
+  (make-student "Milo Turner"
+                #:title 'reu
+                #:mailto anon
+                #:university northeastern-university
+                #:href "https://github.com/iitalics"
+                #:degree* '()))
+
+(define niki-vazou
+  (make-student "Niki Vazou"
+                #:title 'postdoc
+                #:university university-of-maryland
+                #:mailto anon
+                #:href "https://nikivazou.github.io/"
+                #:degree*
+                  `((phd ,ucsd 2016))))
+
+(define milod-kazerounian
+  (make-student "Milod Kazerounian"
+                #:title 'phd
+                #:university university-of-maryland
+                #:mailto anon
+                #:href "https://www.cs.umd.edu/people/milod"
+                #:degree*
+                  `()))
+
+(define brianna-ren
+  (make-student "Brianna Ren"
+                #:title 'phd
+                #:university university-of-maryland
+                #:mailto "bren@cs.umd.edu"
+                #:href "https://www.cs.umd.edu/~bren"
+                #:degree* `()
+                #:gender 'F))
 
 ;; =============================================================================
 

@@ -106,6 +106,10 @@
   (make-university "Brigham Young University"
                    #:href "https://cs.byu.edu"))
 
+(define ucsd
+  (make-university "University of San Diego"
+                   #:href "https://cse.ucsd.edu/"))
+
 ;; =============================================================================
 
 (module+ test

@@ -213,7 +213,7 @@
 (define (alma-mater p)
   (define d* (person-degree* p))
   (if (null? d*)
-    "Former Student"
+    (format "Former ~a" (person-title p))
     (D+->string (car d*))))
 
 (: phd? (-> D+ Boolean))
