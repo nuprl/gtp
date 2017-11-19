@@ -110,6 +110,10 @@
   (make-university "University of San Diego"
                    #:href "https://cse.ucsd.edu/"))
 
+(define university-of-washington
+  (make-university "University of Washington"
+                   #:href "https://www.cs.washington.edu/"))
+
 ;; =============================================================================
 
 (module+ test

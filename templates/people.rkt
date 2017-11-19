@@ -17,6 +17,7 @@
 (require "datatypes.rkt" "universities.rkt")
 
 ;; =============================================================================
+;; PIs
 
 (define matthias-felleisen
   (make-pi "Matthias Felleisen"
@@ -89,6 +90,7 @@
              `((,brown-university 2000))))
 
 ;; =============================================================================
+;; students
 
 (define anon "a@a.a")
 
@@ -399,6 +401,25 @@
                 #:href "https://www.cs.umd.edu/~bren"
                 #:degree* `()
                 #:gender 'F))
+
+(define austin-bourgerie
+  (make-student "Austin Bourgerie"
+    #:title 'reu
+    #:university university-of-maryland
+    #:mailto #f
+    #:href "https://www.linkedin.com/in/bourg"
+    #:degree* '()))
+
+;; =============================================================================
+;; Associates
+
+(define emina-torlak
+  (make-person "Emina Torlak"
+    #:university university-of-washington
+    #:title "Assistant Professor"
+    #:mailto #f
+    #:href "https://homes.cs.washington.edu/~emina/index.html"
+    #:degree* '()))
 
 ;; =============================================================================
 

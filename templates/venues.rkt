@@ -6,6 +6,15 @@
 
 ;; =============================================================================
 
+(define pepm-2018
+  (make-workshop "PEPM" #:year 2018 #:href "https://popl18.sigplan.org/track/PEPM-2018"))
+
+(define vmcai-2018
+  (make-conference "VMCAI" #:year 2018 #:href "https://popl18.sigplan.org/track/VMCAI-2018"))
+
+(define popl-2018
+  (make-conference "POPL" #:year 2018 #:href "https://popl18.sigplan.org/home"))
+
 (define popl-2017
   (make-conference "POPL" #:year 2017 #:href "http://conf.researchr.org/home/POPL-2017"))
 

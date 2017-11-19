@@ -24,8 +24,10 @@
 
   make-student
   make-pi
+  make-person
   make-university
   make-conference
+  make-workshop
 
   venue->string
 
@@ -125,7 +127,7 @@
   [full-name  : String]
   [gender     : Symbol]
   [title      : String]
-  [mailto     : Email]
+  [mailto     : (U #f Email)]
   [href       : URL]
   [degree*    : Degree*]
 ) #:transparent )
@@ -143,6 +145,24 @@
 
 ;; -----------------------------------------------------------------------------
 ;; --- Functions for people
+
+(: make-person (->* [String #:university University #:title String #:mailto (U #f String) #:href String #:degree* Degree*] [#:full-name (U #f String) #:gender Symbol] Person))
+(define (make-person short-name
+                      #:university uni
+                      #:title     title
+                      #:mailto    mailto
+                      #:href      href
+                      #:degree*   degree*
+                      #:gender    [gender 'M]
+                      #:full-name [full-name #f])
+  (person short-name
+          (or full-name short-name)
+          gender
+          title
+          (if mailto (string->email mailto) mailto)
+          (string->url href)
+          degree*))
+
 
 (: make-pi (->* [String #:mailto String #:href String #:degree* Degree* #:position* Position* #:title String] [#:full-name (U #f String) #:gender Symbol] PI))
 (define (make-pi short-name
@@ -162,7 +182,7 @@
       ((inst sort D+ Year) degree* > #:key degree-year)
       ((inst sort P+ Year) position* > #:key position-year)))
 
-(: make-student (->* [String #:university University #:title (U Degree String) #:mailto String #:href String #:degree* Degree*] [#:full-name (U #f String) #:gender Symbol] Student))
+(: make-student (->* [String #:university University #:title (U Degree String) #:mailto (U #f String) #:href String #:degree* Degree*] [#:full-name (U #f String) #:gender Symbol] Student))
 (define (make-student short-name
                       #:university uni
                       #:title     title
@@ -178,7 +198,7 @@
             [(string? title) title]
             [else
              (string-append (degree->string title) (if (add-student? title) " Student" ""))])
-           (string->email mailto)
+           (if mailto (string->email mailto) mailto)
            (string->url href)
            degree*
            uni))
@@ -262,7 +282,8 @@
 
 (: person->mailto (-> Person Any))
 (define (person->mailto pi)
-  (define mailto (email->string (person-mailto pi)))
+  (define maybe-e (person-mailto pi))
+  (define mailto (if maybe-e (email->string maybe-e) ""))
   (make-a mailto mailto))
 
 (: student->university-id (-> Student Symbol))
@@ -285,6 +306,13 @@
 (: make-conference (-> String #:year Year #:href String Conference))
 (define (make-conference name #:year year #:href href)
   (conference name year (string->url href)))
+
+(struct workshop venue () #:transparent)
+(define-type Workshop workshop)
+
+(: make-workshop (-> String #:year Year #:href String Workshop))
+(define (make-workshop name #:year year #:href href)
+  (workshop name year (string->url href)))
 
 (: venue->string (-> Venue Any))
 (define (venue->string vnu)
