@@ -82,6 +82,16 @@
         #:href "https://popl18.sigplan.org/event/pepm-2018-on-the-cost-of-type-tag-soundness"
         #:venue pepm-2018]]
       @appeared[@publication[
+        #:title "Sound Gradual Typing Only Mostly Dead"
+        #:author (list spenser-bauman carl-friedrich-bolz-tereick jeremy-siek sam-tobin-hochstadt)
+        #:href "https://dl.acm.org/citation.cfm?doid=3152284.3133878"
+        #:venue oopsla-2017]]
+      @appeared[@publication[
+        #:title "Theorems for Free for Free: Parametricity, With and Without Types"
+        #:author (list amal-ahmed dustin-jamner jeremy-siek philip-wadler)
+        #:href "http://www.ccs.neu.edu/home/amal/papers/thmfreefree.pdf"
+        #:venue icfp-2017]]
+      @appeared[@publication[
         #:title "Automatically Generating the Dynamic Semantics of Gradually Typed Languages"
         #:author (list matteo-cimini jeremy-siek)
         #:href "http://popl17.sigplan.org/event/popl-2017-papers-automatically-generating-the-dynamic-semantics-of-gradually-typed-languages"

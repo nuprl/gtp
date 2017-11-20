@@ -146,13 +146,12 @@
 ;; -----------------------------------------------------------------------------
 ;; --- Functions for people
 
-(: make-person (->* [String #:university University #:title String #:mailto (U #f String) #:href String #:degree* Degree*] [#:full-name (U #f String) #:gender Symbol] Person))
+(: make-person (->* [String #:title String #:href String] [#:full-name (U #f String) #:gender Symbol #:mailto (U #f String) #:degree* Degree*] Person))
 (define (make-person short-name
-                      #:university uni
                       #:title     title
-                      #:mailto    mailto
                       #:href      href
-                      #:degree*   degree*
+                      #:degree*   [degree* '()]
+                      #:mailto    [mailto #f]
                       #:gender    [gender 'M]
                       #:full-name [full-name #f])
   (person short-name

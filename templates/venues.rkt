@@ -15,6 +15,12 @@
 (define popl-2018
   (make-conference "POPL" #:year 2018 #:href "https://popl18.sigplan.org/home"))
 
+(define icfp-2017
+  (make-conference "ICFP" #:year 2017 #:href "https://conf.researchr.org/home/icfp-2017"))
+
+(define oopsla-2017
+  (make-conference "OOPSLA" #:year 2017 #:href "https://2017.splashcon.org/track/splash-2017-OOPSLA"))
+
 (define popl-2017
   (make-conference "POPL" #:year 2017 #:href "http://conf.researchr.org/home/POPL-2017"))
 

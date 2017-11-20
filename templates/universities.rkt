@@ -6,6 +6,10 @@
 
 ;; =============================================================================
 
+(define university-of-edinburgh
+  (make-university "University of Edinburgh"
+                   #:href "https://www.ed.ac.uk/"))
+
 (define it-copenhagen
   (make-university "IT University of Copenhagen"
                    #:href "http://www.itu.dk/"))

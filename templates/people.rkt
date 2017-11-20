@@ -404,7 +404,7 @@
 
 (define austin-bourgerie
   (make-student "Austin Bourgerie"
-    #:title 'reu
+    #:title 'reu ;; maybe supported by "GT across the spectrum"
     #:university university-of-maryland
     #:mailto #f
     #:href "https://www.linkedin.com/in/bourg"
@@ -413,12 +413,32 @@
 ;; =============================================================================
 ;; Associates
 
+(define amal-ahmed
+  (make-person "Amal Ahmed"
+    #:title "Assistant Professor"
+    #:href "http://www.ccs.neu.edu/home/amal/"))
+
+(define carl-friedrich-bolz-tereick
+  (make-person "Carl-Friedrich Bolz-Tereick"
+    #:title "Researcher"
+    #:href "http://cfbolz.de/"))
+
 (define emina-torlak
   (make-person "Emina Torlak"
-    #:university university-of-washington
     #:title "Assistant Professor"
+    #:href "https://homes.cs.washington.edu/~emina/index.html"))
+
+(define philip-wadler
+  (make-person "Philip Wadler"
+    #:title "Professor"
+    #:href "http://homepages.inf.ed.ac.uk/wadler/"))
+
+(define dustin-jamner
+  (make-student "Dustin Jamner"
+    #:title 'reu ;; not supported by "GT Across the Spectrum", I think
+    #:university northeastern-university
     #:mailto #f
-    #:href "https://homes.cs.washington.edu/~emina/index.html"
+    #:href "https://github.com/DIJamner"
     #:degree* '()))
 
 ;; =============================================================================
