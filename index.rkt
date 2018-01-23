@@ -66,17 +66,17 @@
   }}}
   @div[class: "row"]{
     @research-highlights[
-      @to-appear[@publication[
+      @appeared[@publication[
         #:title "Symbolic Types for Lenient Symbolic Execution"
         #:author (list stephen-chang alex-knauth emina-torlak)
         #:href "https://popl18.sigplan.org/event/popl-2018-papers-symbolic-types-for-lenient-symbolic-execution"
         #:venue popl-2018]]
-      @to-appear[@publication[
+      @appeared[@publication[
         #:title "Refinement Types for Ruby"
         #:author (list milod-kazerounian niki-vazou austin-bourgerie jeff-foster emina-torlak)
         #:href "https://popl18.sigplan.org/track/VMCAI-2018#About"
         #:venue vmcai-2018]]
-      @to-appear[@publication[
+      @appeared[@publication[
         #:title "On the Cost of Type-Tag Soundness"
         #:author (list ben-greenman zeina-migeed)
         #:href "https://popl18.sigplan.org/event/pepm-2018-on-the-cost-of-type-tag-soundness"
