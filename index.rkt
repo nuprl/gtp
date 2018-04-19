@@ -146,6 +146,11 @@
 
     @news-and-events[
       @pi-meeting[
+        #:date "2018-04-23"
+        #:location northeastern-university
+        #:schedule "http://www.ccs.neu.edu/home/matthias/pi2018.html"
+      ]
+      @pi-meeting[
         #:date "2017-08-07"
         #:location northeastern-university
         #:schedule "pi2017/pi2017.html"
