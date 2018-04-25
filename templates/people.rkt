@@ -309,7 +309,8 @@
                 #:university brown-university
                 #:mailto "justinlpombrio@gmail.com"
                 #:href "http://justinpombrio.net/"
-                #:degree* `((bs ,wpi 2011))))
+                #:degree* `((phd ,brown-university 2018)
+                            (bs ,wpi 2011))))
 
 (define philip-blair
   (make-student "Philip Blair"

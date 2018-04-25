@@ -66,6 +66,7 @@
   }}}
   @div[class: "row"]{
     @research-highlights[
+      @phddefense[justin-pombrio]
       @appeared[@publication[
         #:title "Symbolic Types for Lenient Symbolic Execution"
         #:author (list stephen-chang alex-knauth emina-torlak)

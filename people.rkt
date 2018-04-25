@@ -165,8 +165,6 @@
     milod-kazerounian
 
     ;; -- IU
-    david-christiansen
-    matteo-cimini
     da
     ambrosebs
     caner-derici
@@ -175,11 +173,9 @@
     sarah-spall
     rajan-walia
     andrew-kent
-    di-zhong
 
     ;; -- Brown
     jack-wrenn
-    justin-pombrio
     preston-tunnell-wilson
     sorawee-porncharoenwase
 
@@ -194,9 +190,13 @@
 
   @alumni[
     asumu-takikawa
+    david-christiansen
     david-kempe-II
+    di-zhong
     earl-dean
     joe-gibbs-politz
+    justin-pombrio
+    matteo-cimini
     matthew-kolosick
     philip-blair
     spenser-bauman
