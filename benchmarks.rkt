@@ -45,7 +45,7 @@
   @benchmark-suites[
     @benchmarks[
       #:name "Reticulated Python"
-      #:href "https://github.com/nuprl/retic-performance?path=benchmarks"
+      #:href "https://github.com/nuprl/retic_performance?path=benchmarks"
       #:publications (list gm-pepm-2018)
       @(list @p{
         Suite of Python programs adapted from:
