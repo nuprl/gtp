@@ -4,7 +4,7 @@
 
 @(define (research-projects . p*)
   @(list
-     @h2[class: "red-back-big"]{Projects}
+     @h3[class: "red-back-big"]{Projects}
      @(map project->string p*)))
 
 @(define (project #:name name #:href href desc)

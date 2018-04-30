@@ -6,7 +6,7 @@
 
 @page[1]{
   @div[class: "col-md-12"]{
-    @h2[class: "red-back-big-big"]{Project Overview}
+    @h3[class: "red-back-big-big"]{Project Overview}
     @div[class: "col-md-12 card"]{
       @p{
         With the rise of the web, dynamically typed @|---| often called

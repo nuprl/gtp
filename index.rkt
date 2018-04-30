@@ -77,16 +77,8 @@
         #:author (list milod-kazerounian niki-vazou austin-bourgerie jeff-foster emina-torlak)
         #:href "https://popl18.sigplan.org/track/VMCAI-2018#About"
         #:venue vmcai-2018]]
-      @appeared[@publication[
-        #:title "On the Cost of Type-Tag Soundness"
-        #:author (list ben-greenman zeina-migeed)
-        #:href "https://popl18.sigplan.org/event/pepm-2018-on-the-cost-of-type-tag-soundness"
-        #:venue pepm-2018]]
-      @appeared[@publication[
-        #:title "Sound Gradual Typing Only Mostly Dead"
-        #:author (list spenser-bauman carl-friedrich-bolz-tereick jeremy-siek sam-tobin-hochstadt)
-        #:href "https://dl.acm.org/citation.cfm?doid=3152284.3133878"
-        #:venue oopsla-2017]]
+      @appeared[gm-pepm-2018]
+      @appeared[bbst-oopsla-2017]
       @appeared[@publication[
         #:title "Theorems for Free for Free: Parametricity, With and Without Types"
         #:author (list amal-ahmed dustin-jamner jeremy-siek philip-wadler)
@@ -98,12 +90,7 @@
         #:href "http://popl17.sigplan.org/event/popl-2017-papers-automatically-generating-the-dynamic-semantics-of-gradually-typed-languages"
         #:venue popl-2017
       ]]
-      @appeared[@publication[
-        #:title "Big Types in Little Runtime"
-        #:author (list michael-vitousek cameron-swords jeremy-siek)
-        #:href "http://popl17.sigplan.org/event/popl-2017-papers-big-types-in-little-runtime"
-        #:venue popl-2017
-      ]]
+      @appeared[vss-popl-2017]
       @appeared[@publication[
         #:title "Type Systems as Macros"
         #:author (list stephen-chang alex-knauth ben-greenman)
@@ -137,12 +124,7 @@
         #:href "https://dl.dropboxusercontent.com/u/10275252/gradualizer-popl16.pdf"
         #:venue popl-2016
       ]]
-      @appeared[@publication[
-        #:title "Is Sound Gradual Typing Dead?"
-        #:author (list asumu-takikawa daniel-feltey ben-greenman max-new)
-        #:href "http://www.ccs.neu.edu/racket/pubs/popl16-tfgnvf.pdf"
-        #:venue popl-2016
-      ]]
+      @appeared[tfgnvf-popl-2016]
     ]
 
     @news-and-events[

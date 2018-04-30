@@ -6,25 +6,29 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" /><link rel="stylesheet" href="css/animate.css" /><link rel="stylesheet" href="css/custom.css" />
 <link href="http://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet" type="text/css" />
 <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" type="image/x-icon" size="16x16" href="images/logo/gtp-1.ico" /> <script src="js/wow.min.js"></script>
+<link rel="shortcut icon" type="image/x-icon" size="16x16" href="images/logo/gtp-2.ico" /> <script src="js/wow.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script><script type="text/javascript" src="js/bootstrap.min.js"></script><script type="text/javascript" src="js/custom.js"></script><script type="text/javascript" src="js/stellar.js"></script></head>
 <div class="body" data-stellar-background-ratio="1.5"></div>
-<div class="main-header-container"><div class="shadow-back"><div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/logo/gtp-1.png" /></div>
+<div class="main-header-container"><div class="shadow-back"><div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/logo/gtp-2.png" /></div>
 <div class="main-header"><h1>Gradual Typing Across the Spectrum</h1></div></div></div>
 <body id="top"><div id="menu" class="menu-fixed"><span id="menu-icon"><span class="glyphicon glyphicon-menu-hamburger"></span></span>
-<ul><li class="" data-src="./images/menu/item_1.png"><a href="index.html">Home</a></li><li class="" data-src="./images/menu/item_2.png"><a href="about.html">About</a></li><li class="" data-src="./images/menu/item_3.png"><a href="projects.html">Projects</a></li><li class="" data-src="./images/menu/item_4.png"><a href="benchmarks.html">Benchmarks</a></li><li class="" data-src="./images/menu/item_5.png"><a href="people.html">People</a></li><li class="active" data-src="./images/menu/item_6.png"><a href="contact.html">Contact</a></li></ul></div>
-<div class="body-content">  <div id="content">
-<div class="col-md-12"><h3 class="red-back-big">Get Involved</h3>
-<div class="col-md-12 card"><div class="bio"><p>We are actively seeking talented students and researchers
-at all levels.
-Stop by one of <a href="people.html">our</a> offices if
-you're in town, or visit our websites to learn how to apply
-for your Masters, Ph.D, or post-doc.</p>
-<ul><li><a href="https://www.brown.edu/academics/gradschool/apply">Brown University admissions.</a></li><li><a href="http://www.soic.indiana.edu/graduate/admissions/how-to-apply/computer-science.html">Indiana University admissions.</a></li><li><a href="http://www.ccis.northeastern.edu/academics/phd/phd-apply/">Northeastern University admissions.</a></li><li><a href="https://gradschool.umd.edu/admissions">University of Maryland, College Park admissions.</a></li></ul></div></div></div>
-
-<div class="col-md-12"><h3 class="red-back-big">General Information</h3>
-<div class="col-md-12 card"><div class="col-md-12"><div class="col-md-6">For questions or comments about this website</div>
-<div class="col-md-6"><p>Email <tt>benjaminlgreenman</tt> at <tt>gmail.com</tt>.</p></div></div></div></div></div>
+<ul><li class="" data-src="./images/menu/item_1.png"><a href="index.html">Home</a></li><li class="" data-src="./images/menu/item_2.png"><a href="about.html">About</a></li><li class="" data-src="./images/menu/item_3.png"><a href="projects.html">Projects</a></li><li class="active" data-src="./images/menu/item_4.png"><a href="benchmarks.html">Benchmarks</a></li><li class="" data-src="./images/menu/item_5.png"><a href="people.html">People</a></li><li class="" data-src="./images/menu/item_6.png"><a href="contact.html">Contact</a></li></ul></div>
+<div class="body-content">  <div id="content"><h3 class="red-back-big">Benchmarks</h3><div class="col-md-12"><h3 id="reticulated-python" class="gray-back">Reticulated Python</h3>
+<div class="col-md-12 card"><p><a href="https://github.com/nuprl/retic-performance?path=benchmarks" class="project-link" target="_blank">https://github.com/nuprl/retic-performance?path=benchmarks</a></p>
+<p>Suite of Python programs adapted from:
+ case studies reported by <a href="https://dl.acm.org/citation.cfm?id=2661101">Vitousek, Kent, Siek, and Baker</a>;
+ the module-level evaluation of <a href="http://popl17.sigplan.org/event/popl-2017-papers-big-types-in-little-runtime">Big Types in Little Runtime</a>;
+ and open-source programs.
+Each function in these benchmarks may be typed or untyped.
+In other words, for a program with 10 functions the benchmark explores
+ 1024 configurations of gradual typing.</p>
+Appeared in:
+<ul><li><a href="https://popl18.sigplan.org/event/pepm-2018-on-the-cost-of-type-tag-soundness">On the Cost of Type-Tag Soundness</a>. <a href="http://ccs.neu.edu/home/types">Ben Greenman</a> and <a href="http://github.com/migeed-z">Zeina Migeed</a>. <a href="https://popl18.sigplan.org/track/PEPM-2018">PEPM 2018</a></li></ul></div></div><div class="col-md-12"><h3 id="typed-racket" class="gray-back">Typed Racket</h3>
+<div class="col-md-12 card"><p><a href="https://github.com/bennn/gtp-benchmarks" class="project-link" target="_blank">https://github.com/bennn/gtp-benchmarks</a></p>
+<p>Suite of Typed Racket programs adapted from open-source projects.
+Each module in these benchmarks may be typed or untyped.</p>
+Appeared in:
+<ul><li><a href="http://www.ccs.neu.edu/racket/pubs/popl16-tfgnvf.pdf">Is Sound Gradual Typing Dead?</a>. <a href="http://ccs.neu.edu/home/asumu">Asumu Takikawa</a>, <a href="https://github.com/dfeltey">Daniel Feltey</a>, <a href="http://ccs.neu.edu/home/types">Ben Greenman</a>, <a href="http://maxsnew.github.io">Max S. New</a>, <a href="http://janvitek.org">Jan Vitek</a>, and <a href="www.ccs.neu.edu/home/matthias">Matthias Felleisen</a>. <a href="http://conf.researchr.org/home/POPL-2016">POPL 2016</a></li><li><a href="https://dl.acm.org/citation.cfm?doid=3152284.3133878">Sound Gradual Typing Only Mostly Dead</a>. <a href="http://www.crest.iu.edu/node/194">Spenser Bauman</a>, <a href="http://cfbolz.de/">Carl-Friedrich Bolz-Tereick</a>, <a href="http://wphomes.soic.indiana.edu/jsiek/">Jeremy Siek</a>, and <a href="http://homes.soic.indiana.edu/samth">Sam Tobin-Hochstadt</a>. <a href="https://2017.splashcon.org/track/splash-2017-OOPSLA">OOPSLA 2017</a></li></ul></div></div></div>
 <div id="sponsors" class="col-md-12"><center><h4 class="red-back"></h4></center></div>
 <footer class="col-md-12"><div class="container text-center"><hr />
 <div class="copyright"><p class="text-center">© Copyright Programming Research Laboratory 2016-2017
