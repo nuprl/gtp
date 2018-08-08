@@ -66,6 +66,26 @@
   }}}
   @div[class: "row"]{
     @research-highlights[
+      @to-appear[@publication[
+        #:title "The Behavior of Gradual Types: A User Study"
+        #:author (list preston-tunnell-wilson ben-greenman justin-pombrio sk)
+        #:href "https://conf.researchr.org/event/dls-2018/dls-2018-the-behavior-of-gradual-types-a-user-study"
+        #:venue dls-2018]]
+      @to-appear[@publication[
+        #:title "Collapsible Contracts: Fixing a Pathology of Gradual Typing"
+        #:author (list daniel-feltey ben-greenman christophe-scholliers robert-bruce-findler vincent-st-amour)
+        #:href "https://2018.splashcon.org/event/splash-2018-oopsla-collapsible-contracts-pruning-pathological-performance-for-sound-gradual-typing"
+        #:venue oopsla-2018]]
+      @to-appear[@publication[
+        #:title "A Spectrum of Type Soundness and Performance"
+        #:author (list ben-greenman matthias-felleisen)
+        #:href "https://icfp18.sigplan.org/event/icfp-2018-papers-a-spectrum-of-soundness-and-performance"
+        #:venue icfp-2018]]
+      @appeared[@publication[
+        #:title "KafKa: Gradual Typing for Objects"
+        #:author (list benjamin-chung paley-li francesco-zappa-nardelli jan-vitek)
+        #:href "https://2018.ecoop.org/event/ecoop-2018-papers-a-framework-for-object-oriented-gradual-typing"
+        #:venue ecoop-2018]]
       @phddefense[justin-pombrio]
       @appeared[@publication[
         #:title "Symbolic Types for Lenient Symbolic Execution"

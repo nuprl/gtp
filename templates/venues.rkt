@@ -6,6 +6,18 @@
 
 ;; =============================================================================
 
+(define dls-2018
+  (make-workshop "DLS" #:year 2018 #:href "https://conf.researchr.org/track/dls-2018/dls-2018"))
+
+(define oopsla-2018
+  (make-conference "OOPSLA" #:year 2018 #:href "https://2018.splashcon.org"))
+
+(define icfp-2018
+  (make-conference "ICFP" #:year 2018 #:href "https://conf.researchr.org/home/icfp-2018"))
+
+(define ecoop-2018
+  (make-conference "ECOOP" #:year 2018 #:href "https://2018.ecoop.org/"))
+
 (define pepm-2018
   (make-workshop "PEPM" #:year 2018 #:href "https://popl18.sigplan.org/track/PEPM-2018"))
 

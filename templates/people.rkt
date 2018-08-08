@@ -22,7 +22,7 @@
 (define matthias-felleisen
   (make-pi "Matthias Felleisen"
            #:mailto "matthias@ccs.neu.edu"
-           #:href "www.ccs.neu.edu/home/matthias"
+           #:href "http://felleisen.org/matthias/"
            #:title "Trustee Professor"
            #:degree*
              `((phd    ,indiana-university    1987)
@@ -433,6 +433,31 @@
   (make-person "Philip Wadler"
     #:title "Professor"
     #:href "http://homepages.inf.ed.ac.uk/wadler/"))
+
+(define paley-li
+  (make-person "Paley Li"
+    #:title "Postdoc"
+    #:href "http://palez.github.io/"))
+
+(define francesco-zappa-nardelli
+  (make-person "Francesco Zappa Nardelli"
+    #:title "Senior Researcher"
+    #:href "https://www.di.ens.fr/~zappa/"))
+
+(define christophe-scholliers
+  (make-person "Christophe Scholliers"
+    #:title "Professor"
+    #:href "http://users.ugent.be/~chscholl"))
+
+(define robert-bruce-findler
+  (make-person "Robert Bruce Findler"
+    #:title "Professor"
+    #:href "https://www.eecs.northwestern.edu/~robby/"))
+
+(define vincent-st-amour
+  (make-person "Vincent St-Amour"
+    #:title "Warren Teaching Fellow"
+    #:href "http://users.eecs.northwestern.edu/~stamourv/"))
 
 (define dustin-jamner
   (make-student "Dustin Jamner"
