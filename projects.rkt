@@ -187,7 +187,43 @@
         control flow, Java interoperability, and heterogeneous maps.
         It is a 
         @a[href: "http://frenchy64.github.io/papers/esop16-short.pdf"]{practical system} used in industry and open source.
-      }]
+        }]
+    @project[
+      #:name "Grift"
+      #:href "https://github.com/Gradual-Typing/Grift"
+    @(list @p{
+            Grift is a gradually-typed language that was designed and implemented
+            from scratch. In practice, most gradually-typed languages currently
+            used in practice are designed by adding static typing to an existing
+            language, e.g. Typed Racket for Racket, TypeScript and SafeTypeScript
+            for JavaScript, Hack for PHP, Reticulated Python for Python, etc.
+            However, adding static typing in a way that satisfies a strong notion
+            of type soundness requires additions/modifications to the runtime
+            system to do type checking when necessary at runtime. This is usually
+            a source of performance inefficiency. For instance, Typed Racket used
+            Racket's runtime contract system without modifications to maintain
+            type soundness and it caused up to 100x slowdown as reported in their
+            POPL 2016 paper. In Grift's compiler, the runtime system is completely
+            designed with the goal to minimize the overhead of runtime checking
+            for the gradually-typed language it implements.
+      }@p{
+        The compiler implements a variant of space-efficient coercions and
+        space-efficient monotonic heap. Space-efficiency requires more work
+        to be done when casting an already casted value at runtime which is
+        typically some sort of composition/merging between the old and the new
+        casts. On the other hand, it is much cheaper to access an already casted
+        value because it is guaranteed to go through a single layer of checks
+        instead of a chain of casts that is linear in the number of times this
+        value has been casted before. Grift's runtime also represents values
+        and types in a way that makes many operations on them that are related
+        to runtime checking very efficient. Our self-comparison performance
+        evaluation indicates that this approach increased performance
+        substantially in compare to our own implementation of the
+        space-inefficient runtime. It also indicates that the overhead of doing
+        composition/merging is not expensive. Furthermore, fully typed and fully
+        untyped code is competitive with OCaml, and Typed Racket, and with Chez
+        Scheme, Gambit Scheme, and Racket respectively.
+      })]
     @;@project[
     @;  #:name "R"
     @;  #:href "http://janvitek.org"

@@ -63,5 +63,23 @@
     @(list @p{
       Suite of Typed Racket programs adapted from open-source projects.
       Each module in these benchmarks may be typed or untyped.
+      })]
+    @benchmarks[
+      #:name "Grift"
+      #:href "https://github.com/Gradual-Typing/benchmarks"
+      #:publications (list kas-stop-2015 kas-stop-2016 kas-scheme-2018)
+    @(list @p{
+      Suite of programs adapted from different sources including
+      "The Computer Language Benchmarks Game", "Kernighan and Van Wyk benchmarks",
+      "Numerical Recipes in C", "John C. Hull's Options, Futures, and Other Derivatives",
+      and "Paul Graham's book ANSI Common Lisp". Each benchmark has two Grift and Racket
+      versions, fully typed and fully untyped. They are also ported to OCaml,
+      Chez Scheme, and Gambit Scheme. They are intended to benchmark systems that support
+      fine-grained gradual typing where each type place holder can be fully typed,
+      partially typed, or untyped. Currently the benchmarking infrastructure supports
+      Grift only for the gradual typing experiments but also benchmarks fully typed and
+      fully untyped Grift against other statically typed and dynamically typed languages
+      mentioned before. There are plans to support other fine-grained gradually-typed
+      systems such as HiggsCheck and Reticulated Python.
     })]
   ]}

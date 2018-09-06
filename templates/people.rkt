@@ -182,7 +182,8 @@
                 #:href "http://deyaaeldeen.github.io/"
                 #:mailto "dalmahal@indiana.edu"
                 #:degree*
-                  '()))
+                  `((ms ,indiana-university 2015)
+                    (bs ,helwan-university 2011))))
 
 (define michael-vitousek
   (make-student "Michael Vitousek"

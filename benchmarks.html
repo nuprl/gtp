@@ -6,10 +6,10 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" /><link rel="stylesheet" href="css/animate.css" /><link rel="stylesheet" href="css/custom.css" />
 <link href="http://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet" type="text/css" />
 <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" type="image/x-icon" size="16x16" href="images/logo/gtp-2.ico" /> <script src="js/wow.min.js"></script>
+<link rel="shortcut icon" type="image/x-icon" size="16x16" href="images/logo/gtp-0.ico" /> <script src="js/wow.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script><script type="text/javascript" src="js/bootstrap.min.js"></script><script type="text/javascript" src="js/custom.js"></script><script type="text/javascript" src="js/stellar.js"></script></head>
 <div class="body" data-stellar-background-ratio="1.5"></div>
-<div class="main-header-container"><div class="shadow-back"><div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/logo/gtp-2.png" /></div>
+<div class="main-header-container"><div class="shadow-back"><div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/logo/gtp-0.png" /></div>
 <div class="main-header"><h1>Gradual Typing Across the Spectrum</h1></div></div></div>
 <body id="top"><div id="menu" class="menu-fixed"><span id="menu-icon"><span class="glyphicon glyphicon-menu-hamburger"></span></span>
 <ul><li class="" data-src="./images/menu/item_1.png"><a href="index.html">Home</a></li><li class="" data-src="./images/menu/item_2.png"><a href="about.html">About</a></li><li class="" data-src="./images/menu/item_3.png"><a href="projects.html">Projects</a></li><li class="active" data-src="./images/menu/item_4.png"><a href="benchmarks.html">Benchmarks</a></li><li class="" data-src="./images/menu/item_5.png"><a href="people.html">People</a></li><li class="" data-src="./images/menu/item_6.png"><a href="contact.html">Contact</a></li></ul></div>
@@ -28,7 +28,22 @@ Appeared in:
 <p>Suite of Typed Racket programs adapted from open-source projects.
 Each module in these benchmarks may be typed or untyped.</p>
 Appeared in:
-<ul><li><a href="http://www.ccs.neu.edu/racket/pubs/popl16-tfgnvf.pdf">Is Sound Gradual Typing Dead?</a>. <a href="http://ccs.neu.edu/home/asumu">Asumu Takikawa</a>, <a href="https://github.com/dfeltey">Daniel Feltey</a>, <a href="http://ccs.neu.edu/home/types">Ben Greenman</a>, <a href="http://maxsnew.github.io">Max S. New</a>, <a href="http://janvitek.org">Jan Vitek</a>, and <a href="www.ccs.neu.edu/home/matthias">Matthias Felleisen</a>. <a href="http://conf.researchr.org/home/POPL-2016">POPL 2016</a></li><li><a href="https://dl.acm.org/citation.cfm?doid=3152284.3133878">Sound Gradual Typing Only Mostly Dead</a>. <a href="http://www.crest.iu.edu/node/194">Spenser Bauman</a>, <a href="http://cfbolz.de/">Carl-Friedrich Bolz-Tereick</a>, <a href="http://wphomes.soic.indiana.edu/jsiek/">Jeremy Siek</a>, and <a href="http://homes.soic.indiana.edu/samth">Sam Tobin-Hochstadt</a>. <a href="https://2017.splashcon.org/track/splash-2017-OOPSLA">OOPSLA 2017</a></li></ul></div></div></div>
+<ul><li><a href="http://www.ccs.neu.edu/racket/pubs/popl16-tfgnvf.pdf">Is Sound Gradual Typing Dead?</a>. <a href="http://ccs.neu.edu/home/asumu">Asumu Takikawa</a>, <a href="https://github.com/dfeltey">Daniel Feltey</a>, <a href="http://ccs.neu.edu/home/types">Ben Greenman</a>, <a href="http://maxsnew.github.io">Max S. New</a>, <a href="http://janvitek.org">Jan Vitek</a>, and <a href="http://felleisen.org/matthias/">Matthias Felleisen</a>. <a href="http://conf.researchr.org/home/POPL-2016">POPL 2016</a></li><li><a href="https://dl.acm.org/citation.cfm?doid=3152284.3133878">Sound Gradual Typing Only Mostly Dead</a>. <a href="http://www.crest.iu.edu/node/194">Spenser Bauman</a>, <a href="http://cfbolz.de/">Carl-Friedrich Bolz-Tereick</a>, <a href="http://wphomes.soic.indiana.edu/jsiek/">Jeremy Siek</a>, and <a href="http://homes.soic.indiana.edu/samth">Sam Tobin-Hochstadt</a>. <a href="https://2017.splashcon.org/track/splash-2017-OOPSLA">OOPSLA 2017</a></li></ul></div></div><div class="col-md-12"><h3 id="grift" class="gray-back">Grift</h3>
+<div class="col-md-12 card"><p><a href="https://github.com/Gradual-Typing/benchmarks" class="project-link" target="_blank">https://github.com/Gradual-Typing/benchmarks</a></p>
+<p>Suite of programs adapted from different sources including
+&quot;The Computer Language Benchmarks Game&quot;, &quot;Kernighan and Van Wyk benchmarks&quot;,
+&quot;Numerical Recipes in C&quot;, &quot;John C. Hull's Options, Futures, and Other Derivatives&quot;,
+and &quot;Paul Graham's book ANSI Common Lisp&quot;. Each benchmark has two Grift and Racket
+versions, fully typed and fully untyped. They are also ported to OCaml,
+Chez Scheme, and Gambit Scheme. They are intended to benchmark systems that support
+fine-grained gradual typing where each type place holder can be fully typed,
+partially typed, or untyped. Currently the benchmarking infrastructure supports
+Grift only for the gradual typing experiments but also benchmarks fully typed and
+fully untyped Grift against other statically typed and dynamically typed languages
+mentioned before. There are plans to support other fine-grained gradually-typed
+systems such as HiggsCheck and Reticulated Python.</p>
+Appeared in:
+<ul><li><a href="https://2015.ecoop.org/event/stop2015-towards-absolutely-efficient-gradually-typed-languages"> Towards Absolutely Efficient Gradually Typed Languages</a>. <a href="http://www.crest.iu.edu/node/164">Andre Kuhlenschmidt</a>, <a href="http://deyaaeldeen.github.io/">Deyaaeldeen Almahallawi</a>, and <a href="http://wphomes.soic.indiana.edu/jsiek/">Jeremy Siek</a>. <a href="https://2015.ecoop.org/track/STOP2015">STOP 2015</a></li><li><a href="https://2016.ecoop.org/event/stop-2016-a-systematic-performance-evaluation-of-gradually-typed-functions-and-references"> A Systematic Performance Evaluation of Gradually Typed Functions and References</a>. <a href="http://www.crest.iu.edu/node/164">Andre Kuhlenschmidt</a>, <a href="http://deyaaeldeen.github.io/">Deyaaeldeen Almahallawi</a>, and <a href="http://wphomes.soic.indiana.edu/jsiek/">Jeremy Siek</a>. <a href="http://2016.ecoop.org/track/STOP-2016">STOP 2016</a></li><li><a href="https://icfp18.sigplan.org/event/scheme-2018-papers-toward-efficient-gradual-typing">An Efficient Compiler for Gradually-Typed Lambda Calculus</a>. <a href="http://www.crest.iu.edu/node/164">Andre Kuhlenschmidt</a>, <a href="http://deyaaeldeen.github.io/">Deyaaeldeen Almahallawi</a>, and <a href="http://wphomes.soic.indiana.edu/jsiek/">Jeremy Siek</a>. <a href="https://icfp18.sigplan.org/track/scheme-2018-papers">Scheme 2018</a></li></ul></div></div></div>
 <div id="sponsors" class="col-md-12"><center><h4 class="red-back"></h4></center></div>
 <footer class="col-md-12"><div class="container text-center"><hr />
 <div class="copyright"><p class="text-center">© Copyright Programming Research Laboratory 2016-2017
