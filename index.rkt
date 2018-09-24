@@ -66,6 +66,7 @@
   }}}
   @div[class: "row"]{
     @research-highlights[
+      @to-appear[@kas-scheme-2018]
       @to-appear[@publication[
         #:title "The Behavior of Gradual Types: A User Study"
         #:author (list preston-tunnell-wilson ben-greenman justin-pombrio sk)
