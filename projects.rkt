@@ -218,10 +218,10 @@
         and types in a way that makes many operations on them that are related
         to runtime checking very efficient. Our self-comparison performance
         evaluation indicates that this approach increased performance
-        substantially in compare to our own implementation of the
+        substantially in comparison to our own implementation of the
         space-inefficient runtime. It also indicates that the overhead of doing
         composition/merging is not expensive. Furthermore, fully typed and fully
-        untyped code is competitive with OCaml, and Typed Racket, and with Chez
+        untyped code is in the ball-park of OCaml, and Typed Racket, and of Chez
         Scheme, Gambit Scheme, and Racket respectively.
       })]
     @;@project[
