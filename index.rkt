@@ -76,6 +76,7 @@
         #:author (list daniel-feltey ben-greenman christophe-scholliers robert-bruce-findler vincent-st-amour)
         #:href "https://2018.splashcon.org/event/splash-2018-oopsla-collapsible-contracts-pruning-pathological-performance-for-sound-gradual-typing"
         #:venue oopsla-2018]]
+      @appeared[@kas-scheme-2018]
       @to-appear[@publication[
         #:title "A Spectrum of Type Soundness and Performance"
         #:author (list ben-greenman matthias-felleisen)

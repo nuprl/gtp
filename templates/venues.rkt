@@ -51,3 +51,8 @@
 (define stop-2016
   (make-conference "STOP" #:year 2016 #:href "http://2016.ecoop.org/track/STOP-2016"))
 
+(define stop-2015
+  (make-conference "STOP" #:year 2015 #:href "https://2015.ecoop.org/track/STOP2015"))
+
+(define scheme-2018
+  (make-workshop "Scheme" #:year 2018 #:href "https://icfp18.sigplan.org/track/scheme-2018-papers"))

@@ -8,6 +8,20 @@
   "people.rkt"
   "venues.rkt")
 
+(define kas-stop-2015
+  (publication
+   #:title " Towards Absolutely Efficient Gradually Typed Languages"
+    #:author (list andre-kuhlenschmidt deyaaeldeen-almahallawi siek)
+    #:href "https://2015.ecoop.org/event/stop2015-towards-absolutely-efficient-gradually-typed-languages"
+    #:venue stop-2015))
+
+(define kas-stop-2016
+  (publication
+   #:title " A Systematic Performance Evaluation of Gradually Typed Functions and References"
+    #:author (list andre-kuhlenschmidt deyaaeldeen-almahallawi siek)
+    #:href "https://2016.ecoop.org/event/stop-2016-a-systematic-performance-evaluation-of-gradually-typed-functions-and-references"
+    #:venue stop-2016))
+
 (define tfgnvf-popl-2016
   (publication
     #:title "Is Sound Gradual Typing Dead?"
@@ -35,3 +49,10 @@
     #:author (list ben-greenman zeina-migeed)
     #:href "https://popl18.sigplan.org/event/pepm-2018-on-the-cost-of-type-tag-soundness"
     #:venue pepm-2018))
+
+(define kas-scheme-2018
+  (publication
+   #:title "An Efficient Compiler for Gradually-Typed Lambda Calculus"
+    #:author (list andre-kuhlenschmidt deyaaeldeen-almahallawi siek)
+    #:href "https://icfp18.sigplan.org/event/scheme-2018-papers-toward-efficient-gradual-typing"
+    #:venue scheme-2018))

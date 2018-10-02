@@ -6,10 +6,10 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" /><link rel="stylesheet" href="css/animate.css" /><link rel="stylesheet" href="css/custom.css" />
 <link href="http://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet" type="text/css" />
 <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" type="image/x-icon" size="16x16" href="images/logo/gtp-1.ico" /> <script src="js/wow.min.js"></script>
+<link rel="shortcut icon" type="image/x-icon" size="16x16" href="images/logo/gtp-0.ico" /> <script src="js/wow.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script><script type="text/javascript" src="js/bootstrap.min.js"></script><script type="text/javascript" src="js/custom.js"></script><script type="text/javascript" src="js/stellar.js"></script></head>
 <div class="body" data-stellar-background-ratio="1.5"></div>
-<div class="main-header-container"><div class="shadow-back"><div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/logo/gtp-1.png" /></div>
+<div class="main-header-container"><div class="shadow-back"><div class="main-logo"><img class="img-responsive pull-left" alt="" src="images/logo/gtp-0.png" /></div>
 <div class="main-header"><h1>Gradual Typing Across the Spectrum</h1></div></div></div>
 <body id="top"><div id="menu" class="menu-fixed"><span id="menu-icon"><span class="glyphicon glyphicon-menu-hamburger"></span></span>
 <ul><li class="" data-src="./images/menu/item_1.png"><a href="index.html">Home</a></li><li class="" data-src="./images/menu/item_2.png"><a href="about.html">About</a></li><li class="active" data-src="./images/menu/item_3.png"><a href="projects.html">Projects</a></li><li class="" data-src="./images/menu/item_4.png"><a href="benchmarks.html">Benchmarks</a></li><li class="" data-src="./images/menu/item_5.png"><a href="people.html">People</a></li><li class="" data-src="./images/menu/item_6.png"><a href="contact.html">Contact</a></li></ul></div>
@@ -124,7 +124,39 @@ control flow, Java interoperability, and heterogeneous maps.
 It is a
 <a href="http://frenchy64.github.io/papers/esop16-short.pdf">practical system</a> used in industry and open source.</p>
 <div class="row col-md-12"><span class="pull-right">You can find more on this site:
-<a href="http://typedclojure.org" class="project-link" target="_blank">http://typedclojure.org</a></span></div></div></div></div>
+<a href="http://typedclojure.org" class="project-link" target="_blank">http://typedclojure.org</a></span></div></div></div><div class="col-md-12"><h3 id="grift" class="gray-back">Grift</h3>
+<div class="col-md-12 card"><img class="img-responsive project-logo" src="images/projects/grift.png" />
+<p>Grift is a gradually-typed language that was designed and implemented
+from scratch. In practice, most gradually-typed languages currently
+used in practice are designed by adding static typing to an existing
+language, e.g. Typed Racket for Racket, TypeScript and SafeTypeScript
+for JavaScript, Hack for PHP, Reticulated Python for Python, etc.
+However, adding static typing in a way that satisfies a strong notion
+of type soundness requires additions/modifications to the runtime
+system to do type checking when necessary at runtime. This is usually
+a source of performance inefficiency. For instance, Typed Racket used
+Racket's runtime contract system without modifications to maintain
+type soundness and it caused up to 100x slowdown as reported in their
+POPL 2016 paper. In Grift's compiler, the runtime system is completely
+designed with the goal to minimize the overhead of runtime checking
+for the gradually-typed language it implements.</p><p>The compiler implements a variant of space-efficient coercions and
+space-efficient monotonic heap. Space-efficiency requires more work
+to be done when casting an already casted value at runtime which is
+typically some sort of composition/merging between the old and the new
+casts. On the other hand, it is much cheaper to access an already casted
+value because it is guaranteed to go through a single layer of checks
+instead of a chain of casts that is linear in the number of times this
+value has been casted before. Grift's runtime also represents values
+and types in a way that makes many operations on them that are related
+to runtime checking very efficient. Our self-comparison performance
+evaluation indicates that this approach increased performance
+substantially in compare to our own implementation of the
+space-inefficient runtime. It also indicates that the overhead of doing
+composition/merging is not expensive. Furthermore, fully typed and fully
+untyped code is competitive with OCaml, and Typed Racket, and with Chez
+Scheme, Gambit Scheme, and Racket respectively.</p>
+<div class="row col-md-12"><span class="pull-right">You can find more on this site:
+<a href="https://github.com/Gradual-Typing/Grift" class="project-link" target="_blank">https://github.com/Gradual-Typing/Grift</a></span></div></div></div></div>
 <div id="sponsors" class="col-md-12"><center><h4 class="red-back"></h4></center></div>
 <footer class="col-md-12"><div class="container text-center"><hr />
 <div class="copyright"><p class="text-center">© Copyright Programming Research Laboratory 2016-2017

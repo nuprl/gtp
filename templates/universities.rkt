@@ -118,6 +118,10 @@
   (make-university "University of Washington"
                    #:href "https://www.cs.washington.edu/"))
 
+(define helwan-university
+  (make-university "Helwan University"
+                   #:href "http://www.helwan.edu.eg"))
+
 ;; =============================================================================
 
 (module+ test
