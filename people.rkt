@@ -93,14 +93,6 @@
 
 @page[4]{
   @principal-investigators[
-    @pi->string[samth]{
-      My research focuses on the design and implementation of
-      programming systems.
-      I'm particularly interested in programming languages that
-      support the evolution of software.
-      I primarily work on Racket and Typed Racket as well as with
-      Mozilla Research on JavaScript.
-    }
     @pi->string[matthias]{
       I explore all aspects of program design and programming language design.
       My current research involves work on behavioral software contracts,
@@ -113,15 +105,32 @@
       Such educational interactions often inspire our research,
       and many research efforts end up improving my educational work.
     }
+    @pi->string[jan-vitek]{
+      I work on the design and implementation of programming languages.
+      I led the implementation of the first real-time Java virtual
+      machine to be flight-tested.
+      With Noble and Potter, I proposed what became known as Ownership Types.
+      I tried to understand JavaScript by dynamic analysis and am
+      now looking at supporting scalable data analysis in R.
+    }
     @pi->string[jfoster]{
-      I am a Professor in the Computer Science Department and UMIACS
-      at the University of Maryland, College Park.
-      I am a member of the programming languages group at Maryland.
-      The goal of my research is to develop practical tools and
-      techniques to improve software quality.
-      I am interested in programming languages, software engineering,
-      advanced static type systems, scalable constraint-based analysis,
-      and building tools that implement my ideas.
+      I am a Professor in the Department of Computer Science at Tufts
+      University. The goal of my research is to develop fundamental new ways to
+      make it easier to build more reliable, secure software. I am interested
+      in programming languages, software engineering, and security. I am a
+      member of TuPL.
+
+      Previously, I was a Professor in the Department of Computer Science and
+      UMIACS at the University of Maryland, College Park, as well as a member
+      of PLUM.
+    }
+    @pi->string[sk]{
+      Though my head is often in security, networking, verification,
+      and HCI, my heart is in programming languages.
+      Over the years I have contributed to several innovative and
+      useful software systems: JavaScript and Web tools,
+      Racket (formerly DrScheme), WeScheme, Margrave, Flapjax,
+      FrTime, Continue, FASTLINK, and more.
     }
     @pi->string[jeremy-siek]{
       Associate Professor of Computer Science in the School of Informatics
@@ -138,21 +147,13 @@
       Jeremy is a member of the Programming Languages Group at IU and the
       Center for Research in Extreme Scale Technologies.
     }
-    @pi->string[sk]{
-      Though my head is often in security, networking, verification,
-      and HCI, my heart is in programming languages.
-      Over the years I have contributed to several innovative and
-      useful software systems: JavaScript and Web tools,
-      Racket (formerly DrScheme), WeScheme, Margrave, Flapjax,
-      FrTime, Continue, FASTLINK, and more.
-    }
-    @pi->string[jan-vitek]{
-      I work on the design and implementation of programming languages.
-      I led the implementation of the first real-time Java virtual
-      machine to be flight-tested.
-      With Noble and Potter, I proposed what became known as Ownership Types.
-      I tried to understand JavaScript by dynamic analysis and am
-      now looking at supporting scalable data analysis in R.
+    @pi->string[samth]{
+      My research focuses on the design and implementation of
+      programming systems.
+      I'm particularly interested in programming languages that
+      support the evolution of software.
+      I primarily work on Racket and Typed Racket as well as with
+      Mozilla Research on JavaScript.
     }
   ]
 

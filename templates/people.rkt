@@ -71,13 +71,14 @@
 (define jeff-foster
   (make-pi "Jeff Foster"
            #:full-name "Jeffrey S. Foster"
-           #:mailto "jfoster@cs.umd.edu"
-           #:href "http://www.cs.umd.edu/~jfoster"
+           #:mailto "jfoster@cs.tufts.edu"
+           #:href "https://www.cs.tufts.edu/~jfoster/"
            #:title "Professor"
            #:degree*
              `((phd ,uc-berkeley 2002))
            #:position*
-             `((,university-of-maryland 2002))))
+             `((,tufts-university 2018)
+               (,university-of-maryland 2002))))
 
 (define shriram-krishnamurthi
   (make-pi "Shriram Krishnamurthi"
